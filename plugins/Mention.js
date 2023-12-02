@@ -1,6 +1,6 @@
 const {SUDO} = require('../config');
 const { getAudioBufferFromLink, addInfo, Bixby, bixbybuffer } = require('../lib');
-const {MessageType, Mimetype } = require('@adiwajshing/baileys');
+const {MessageType, Mimetype } = require('@whiskeysockets/baileys');
 const {readFileSync} = require('fs')
 let ffmpeg = require('fluent-ffmpeg');
 ffmpeg.setFfmpegPath(require('@ffmpeg-installer/ffmpeg').path);
