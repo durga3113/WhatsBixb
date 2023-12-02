@@ -11,7 +11,7 @@ const pino = require("pino");
 const path = require("path");
 const events = require("./lib/event");
 const got = require("got");
-const Config = require("./config");
+const config = require("./config");
 const { PluginDB } = require("./lib/db/plugins");
 const Greetings = require("./lib/Greetings");
 const { async } = require("q");
@@ -22,7 +22,7 @@ const store = makeInMemoryStore({
 
 require("events").EventEmitter.defaultMaxListeners = 0;
 const aes256 = require('aes256');
-let plaintext = Config.SESSION_ID.replaceAll("bixby~", "");
+let plaintext = config.SESSION_ID.replaceAll("bixby~", "");
 let key = 'bixbyneverdies';
 let decryptedPlainText = aes256.decrypt(key, plaintext);
   async function md(){
