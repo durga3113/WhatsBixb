@@ -1,4 +1,4 @@
-const { dare, truth, random_question } = require("../lib/FuncTruthOrDare.js")
+const { dare, truth, random_question } = require("../lib/FuncTruthOrDare")
 const axios = require("axios")
 const { Bixby, isPublic } = require("../lib")
 
