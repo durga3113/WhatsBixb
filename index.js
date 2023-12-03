@@ -7,13 +7,13 @@ const {
 const fs = require("fs");
 const { serialize } = require("./lib/serialize");
 const { Message, Image, Sticker } = require("./lib/Base");
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 8000;
 const pino = require("pino");
 const path = require("path");
 const events = require("./lib/event");
 const got = require("got");
-const express = require("express");
-const app = express();
-const port = process.env.PORT || 8000;
 const config = require("./config");
 const { PluginDB } = require("./lib/db/plugins");
 const Greetings = require("./lib/Greetings");
@@ -23,19 +23,23 @@ const store = makeInMemoryStore({
   logger: pino().child({ level: "silent", stream: "store" }),
 });
 
-require("events").EventEmitter.defaultMaxListeners = 500;
-
+require("events").EventEmitter.defaultMaxListeners = 0;
 const aes256 = require('aes256');
 let plaintext = config.SESSION_ID.replaceAll("bixby~", "");
 let key = 'bixbyneverdies';
 let decryptedPlainText = aes256.decrypt(key, plaintext);
   async function md(){
-   let {body} = await got('https://bixbyapi-8e5016edf49a.herokuapp.com/session?id='+{decryptedPlainText});
+   let {body} = await got(`https://bixbyapi-8e5016edf49a.herokuapp.com/session?id=${decryptedPlainText}`)
   let result = JSON.parse(body).result[0].data;
 fs.writeFileSync("./lib/auth_info_baileys/creds.json" , result);
    }
   md();
 
+fs.readdirSync(__dirname + "/lib/plugins/").forEach((plugin) => {
+  if (path.extname(plugin).toLowerCase() == ".js") {
+    require(__dirname + "/lib/plugins/" + plugin);
+  }
+});
 async function Bixby() {
   const { state, saveCreds } = await useMultiFileAuthState(
     "./lib/auth_info_baileys/",
@@ -53,7 +57,7 @@ async function Bixby() {
     downloadHistory: false,
     syncFullHistory: false,
     getMessage: async (key) =>
-      (store.loadMessage(key.id)  {}).message  {
+      (store.loadMessage(key.id) || {}).message || {
         conversation: null,
       },
   });
@@ -102,17 +106,17 @@ async function Bixby() {
         }
       });
       console.log("✅ Plugins Installed!");
-      let str = \\\WhatsBixby Running \nversion : ${
+      let str = `\`\`\`WhatsBixby Running \nversion : ${
         require(__dirname + "/package.json").version
       }\nTotal Plugins : ${events.commands.length}\nWorktype: ${
         config.WORK_TYPE
-      }\\\``;
+      }\`\`\``;
       conn.sendMessage(conn.user.id, { text: str });
 
       try {
         conn.ev.on("group-participants.update", async (data) => {
           Greetings(data, conn);
-      });
+        });
         conn.ev.on("messages.upsert", async (m) => {
           if (m.type !== "notify") return;
           const ms = m.messages[0];
@@ -124,11 +128,11 @@ async function Bixby() {
           msg.store = store;
           if (text_msg && config.LOGS)
             console.log(
-              At : ${
+              `At : ${
                 msg.from.endsWith("@g.us")
                   ? (await conn.groupMetadata(msg.from)).subject
                   : msg.from
-              }\nFrom : ${msg.sender}\nMessage:${text_msg}
+              }\nFrom : ${msg.sender}\nMessage:${text_msg}`
             );
 
           events.commands.map(async (command) => {
@@ -197,10 +201,13 @@ async function Bixby() {
     console.log(err);
   });
 }
+
 app.get("/", (req, res) => {
+
   res.send("WhatsBixby Active!");
 });
 app.listen(port, () => console.log(:${port}));
+
 setTimeout(() => {
-  Bixby();
-}, 12000);
+  Bixby().catch((err) => console.log(err));
+}, 3000);
