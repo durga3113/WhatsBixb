@@ -1,5 +1,5 @@
 const {SUDO} = require('../config');
-const { getAudioBufferFromLink, addInfo, Bixby, bixbybuffer } = require('../lib');
+const { getAudioBufferFromLink, addInfo, Bixby, bixbybuffer } = require("bixby-md");
 const {MessageType, Mimetype } = require('@whiskeysockets/baileys');
 const {readFileSync} = require('fs')
 let ffmpeg = require('fluent-ffmpeg');
