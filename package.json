@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/DX-MODS/WhatsBixby#readme",
   "dependencies": {
-    "@whiskeysockets/baileys": "^6.5.0",
+    "@whiskeysockets/baileys": "git+https://github.com/Afx-Abu/baileys.ml",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@neeraj-x0/textpro": "^1.0.3",
     "@vitalets/google-translate-api": "^9.1.0",
