@@ -1,8 +1,6 @@
 FROM node:latest
 RUN git clone https://github.com/DX-MODS/WhatsBixby /root/Bixby
-WORKDIR /root/Bixby
-RUN npm install
-RUN apt -y update && apt -y upgrade && apt -y install ffmpeg git imagemagick graphicsmagick sudo npm yarn curl && curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt install -y nodejs && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && apt -y update && apt -y install yarn && apt autoremove -y && rm -rf /var/lib/apt/lists/*
+WORKDIR /root/Bixby/
 RUN yarn install --network-concurrency 1
-RUN yarn
-CMD ["yarn", "start"] 
+EXPOSE 8000
+CMD ["npm", "start"]
