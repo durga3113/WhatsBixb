@@ -206,7 +206,7 @@ app.get("/", (req, res) => {
 
   res.send("WhatsBixby Active!");
 });
-app.listen(port, () => console.log(:${port}));
+app.listen(port, () => console.log(`:${port}`));
 
 setTimeout(() => {
   Bixby().catch((err) => console.log(err));
