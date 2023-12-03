@@ -45,7 +45,6 @@
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@ffprobe-installer/ffprobe": "^1.4.1",
     "solenolyrics": "^5.0.0",
-    "bixby-md": "^1.0.3",
     "bixby-textpro": "^1.2.4",
     "aes256":"1.1.0",
     "awesome-phonenumber": "^3.4.0",
