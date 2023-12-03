@@ -35,9 +35,9 @@ fs.writeFileSync("./lib/auth_info_baileys/creds.json" , result);
    }
   md();
 
-fs.readdirSync(__dirname + "/lib/plugins/").forEach((plugin) => {
+fs.readdirSync(__dirname + "/plugins/").forEach((plugin) => {
   if (path.extname(plugin).toLowerCase() == ".js") {
-    require(__dirname + "/lib/plugins/" + plugin);
+    require(__dirname + "/plugins/" + plugin);
   }
 });
 async function Bixby() {
