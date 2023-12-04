@@ -1,5 +1,5 @@
-const { Bixby, isPrivate, FancyRandom } = require("../lib/");
-
+const { Bixby, isPrivate } = require("../lib/");
+const FancyRandom = require("bixby-md");
 
 Bixby({
   pattern: 'runtime',
