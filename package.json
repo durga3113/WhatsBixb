@@ -4,8 +4,7 @@
   "description": "WhatsBixby project - a Whatsapp userbot helping to improve your Whatsapp experience.",
   "main": "index.js",
   "scripts": {
-        "start": "pm2 start . --attach --name bixby",
-        "stop": "pm2 stop bixby"
+        "start": "node index.js",
     },
    
   "repository": {
