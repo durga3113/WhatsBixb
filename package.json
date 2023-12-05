@@ -2,10 +2,11 @@
   "name": "WhatsBixby",
   "version": "2.0.0",
   "description": "WhatsBixby project - a Whatsapp userbot helping to improve your Whatsapp experience.",
-  "main": "./index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node index.js"
-   },
+        "start": "pm2 start . --attach --name bixby",
+        "stop": "pm2 stop bixby"
+    },
    
   "repository": {
     "type": "git",
