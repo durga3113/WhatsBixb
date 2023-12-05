@@ -6,6 +6,10 @@
   "scripts": {
     "start": "pm2 start index.js --name whatsbixby"
   },
+  "engines": {
+    "node": "21.2.0"
+    "npm": "10.2.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DX-MODS/WhatsBixby.git"
