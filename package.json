@@ -6,7 +6,7 @@
     "node": "21.2.0"
   }
   "description": "WhatsBixby project - a Whatsapp userbot helping to improve your Whatsapp experience.",
-  "main": "index.js",
+  "main": "./index.js",
   "scripts": {
     "start": "pm2 start . --attach --name bixby-md"
    },
