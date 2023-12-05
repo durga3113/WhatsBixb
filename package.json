@@ -1,10 +1,6 @@
 {
   "name": "WhatsBixby",
   "version": "2.0.0",
-  "engines": {
-    "npm": "10.2.4"
-    "node": "21.2.0"
-  }
   "description": "WhatsBixby project - a Whatsapp userbot helping to improve your Whatsapp experience.",
   "main": "./index.js",
   "scripts": {
