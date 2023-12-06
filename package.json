@@ -35,7 +35,7 @@
   "dependencies": {
     "bixby-md": "2.0.1",
     "bixby-textpro": "^1.2.4",
-    "@whiskeysockets/baileys": "git+https://github.com/Afx-Abu/baileys.ml",
+    "@whiskeysockets/baileys": "^6.5.0",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@neeraj-x0/textpro": "^1.0.3",
     "@vitalets/google-translate-api": "^9.1.0",
