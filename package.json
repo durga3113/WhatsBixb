@@ -4,7 +4,7 @@
    "description": "WhatsBixby Advanced Md Bot",
    "main": "index.js",
    "scripts": {
-    "start": "node index.js",
+    "start": "supervisor -s index.js",
     "stop": "pm2 stop index"
   },
   "repository": {
