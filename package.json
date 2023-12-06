@@ -4,8 +4,8 @@
    "description": "WhatsBixby Advanced Md Bot",
    "main": "index.js",
    "scripts": {
-    "start": "pm2 start . --attach --name bixby",
-    "stop": "pm2 stop bixby"
+    "start": "pm2 start index.js && pm2 save && pm2 logs",
+    "stop": "pm2 stop index"
   },
   "repository": {
     "type": "git",
