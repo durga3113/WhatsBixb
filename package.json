@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/DX-MODS/WhatsBixby#readme",
   "dependencies": {
-    "bixby-md": "2.0.1",
+    "bixby-md": "2.1.2",
     "bixby-textpro": "^1.2.4",
     "@whiskeysockets/baileys": "^6.5.0",
     "@adiwajshing/keyed-db": "^0.2.4",
