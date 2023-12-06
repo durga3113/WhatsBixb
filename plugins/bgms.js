@@ -1,4 +1,4 @@
-const { Bixby, isPrivate } = require("../lib/")
+const { Bixby, isPrivate } = require("../lib")
 Bixby({
 	pattern: 'bgm ?(.*)',
 	fromMe: isPrivate,
