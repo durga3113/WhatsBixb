@@ -60,6 +60,7 @@
     "node-cron": "^3.0.2",
     "node-webpmux": "^3.1.0",
     "pastebin-js": "^1.0.6",
+    "supervisor": "^0.12.0",
     "pg": "^8.8.0",
     "pino": "^8.1.0",
     "pm2": "^5.3.0",
