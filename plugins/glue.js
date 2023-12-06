@@ -1,4 +1,4 @@
-const { Bixby, isPrivate }  = require('../lib');
+const { Bixby, isPrivate }  = require('../lib/');
 const {WAConnection, MessageOptions, MessageType, Mimetype, Presence} = require('@whiskeysockets/baileys');
 const fs = require('fs');
 const axios = require('axios');
