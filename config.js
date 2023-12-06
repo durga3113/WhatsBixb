@@ -11,7 +11,6 @@ if (fs.existsSync("config.env"))
 const toBool = (x) => x == "true";
 
 DATABASE_URL = process.env.DATABASE_URL || "./database.db";
-process.env.NODE_OPTIONS = '--max_old_space_size=2560'
 let HANDLER = "false";
 module.exports = {
   ANTILINK: toBool(process.env.ANTI_LINK) || false,
