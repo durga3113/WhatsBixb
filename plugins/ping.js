@@ -4,7 +4,7 @@ you may not use this file except in compliance with the License.
 WhatsBixby - Ziyan
 */
 
-const { Bixby ,isPrivate} = require("../lib/");
+const { Bixby ,isPublic } = require("../lib/");
 
 Bixby(
   {
