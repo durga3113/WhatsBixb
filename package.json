@@ -4,7 +4,7 @@
   "description": "WhatsBixby is a simple whatsApp Bot.",
   "main": "index.js",
    "scripts": {
-      "start": "supervisor -s index.js"
+      "start": "pm2 start . --attach --name bixby"
    },
   "repository": {
     "type": "git",
