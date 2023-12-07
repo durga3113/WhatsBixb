@@ -9,7 +9,7 @@ const { Bixby ,isPublic } = require("../lib/");
 Bixby(
   {
     pattern: "ping",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     desc: "To check ping",
     type: "user",
   },
