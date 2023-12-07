@@ -2,10 +2,10 @@
   "name": "WhatsBixby",
   "version": "2.5.0",
   "description": "WhatsBixby is a simple whatsApp Bot.",
-  "main": "./index.js",
-  "scripts": {
-    "start": "supervisor -s index.js"
-  },
+  "main": "index.js",
+   "scripts": {
+      "start": "pm2 start . --attach --name alexa"
+   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DX-MODS/WhatsBixby.git"
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/DX-MODS/WhatsBixby",
   "dependencies": {
-    "@whiskeysockets/baileys": "^6.5.0",
+    "@whiskeysockets/baileys": "git+https://github.com/Afx-Abu/baileys.ml",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@bochilteam/scraper": "3.0.0",
     "@neeraj-x0/textpro": "^1.0.3",
