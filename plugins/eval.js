@@ -5,7 +5,7 @@ WhatsBixby - Ziyan
 */
 const {
   Function,
-  isPrivate,
+  isPublic,
   getUrl,
   fromBuffer,
   getBuffer,
