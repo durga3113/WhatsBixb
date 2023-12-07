@@ -1,7 +1,7 @@
 /* Copyright (C) 2023 DX-MODS.
 Licensed under the MIT License;
 you may not use this file except in compliance with the License.
-Bixby - Ziyan
+WhatsBixby - Ziyan
 */
 const { Bixby, styletext, listall, tiny, isPrivate } = require("../lib/");
 const axios = require("axios");
