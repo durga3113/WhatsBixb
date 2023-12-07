@@ -3,14 +3,14 @@ Licensed under the MIT License;
 you may not use this file except in compliance with the License.
 WhatsBixby - Ziyan
 */
-const { Bixby, styletext, listall, tiny, isPrivate } = require("../lib/");
+const { Bixby, styletext, listall, tiny, isPublic } = require("../lib/");
 const axios = require("axios");
 
 
 Bixby(
   {
     pattern: "fancy",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     desc: "converts text to fancy text",
     type: "converter",
   },
