@@ -5,7 +5,7 @@ WhatsBixby - Ziyan
 */
 
 const config = require("../config");
-const { Bixby, isPrivate } = require("../lib/");
+const { Bixby, isPublic } = require("../lib/");
 const { isAdmin, parsedJid, isUrl } = require("../lib");
 const { cron, saveSchedule } = require("../lib/scheduler");
 
@@ -13,7 +13,7 @@ const { cron, saveSchedule } = require("../lib/scheduler");
 Bixby(
   {
     pattern: "add ?(.*)",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     desc: " *Adds a person to group*",
     type: "group",
   },
@@ -60,7 +60,7 @@ Bixby(
 Bixby(
   {
     pattern: "promote",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     type: "group",
   },
   async (message, match) => {
@@ -82,7 +82,7 @@ Bixby(
 Bixby(
   {
     pattern: "demote",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     type: "group",
   },
   async (message, match) => {
