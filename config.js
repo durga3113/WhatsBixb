@@ -18,7 +18,7 @@ module.exports = {
   LOGS: toBool(process.env.LOGS) || true,
   ANTILINK_ACTION: process.env.ANTI_LINK || "kick",
   SESSION_ID:process.env.SESSION_ID || "",
-  LANG: process.env.LANG || "EN",
+  LANGUAGE: process.env.LANGUAGE || "english",
   HANDLERS: process.env.PREFIX || '[.]',
   BOT_INFO : "",
   RMBG_KEY: process.env.RMBG_KEY || false,
