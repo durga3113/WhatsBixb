@@ -4,7 +4,7 @@ you may not use this file except in compliance with the License.
 WhatsBixby - Ziyan
 */
 
-const { getBuffer, Bixby, isPrivate } = require("../lib");
+const { getBuffer, Bixby, isPublic } = require("../lib");
 const NEED_WORD = "*You Must Enter a Word*";
 const {
   ancient,
@@ -142,7 +142,7 @@ const {
 Bixby(
   {
     pattern: "sparkling",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -167,7 +167,7 @@ Bixby(
 Bixby(
   {
     pattern: "ninjalogo",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -185,7 +185,7 @@ Bixby(
 Bixby(
   {
     pattern: "neonlight",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -203,7 +203,7 @@ Bixby(
 Bixby(
   {
     pattern: "sandwriting",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -221,7 +221,7 @@ Bixby(
 Bixby(
   {
     pattern: "cloud",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -239,7 +239,7 @@ Bixby(
 Bixby(
   {
     pattern: "pornhub",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -264,7 +264,7 @@ Bixby(
 Bixby(
   {
     pattern: "snow",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -282,7 +282,7 @@ Bixby(
 Bixby(
   {
     pattern: "3dtext",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -300,7 +300,7 @@ Bixby(
 Bixby(
   {
     pattern: "ancient",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -314,7 +314,7 @@ Bixby(
 Bixby(
   {
     pattern: "arcane",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -328,7 +328,7 @@ Bixby(
 Bixby(
   {
     pattern: "avengers",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -344,7 +344,7 @@ Bixby(
 Bixby(
   {
     pattern: "balloon",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -358,7 +358,7 @@ Bixby(
 Bixby(
   {
     pattern: "balloon2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -372,7 +372,7 @@ Bixby(
 Bixby(
   {
     pattern: "beach",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -386,7 +386,7 @@ Bixby(
 Bixby(
   {
     pattern: "bearlogo",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -400,7 +400,7 @@ Bixby(
 Bixby(
   {
     pattern: "berry",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -414,7 +414,7 @@ Bixby(
 Bixby(
   {
     pattern: "blackpink",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -428,7 +428,7 @@ Bixby(
 Bixby(
   {
     pattern: "blackpink1",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -442,7 +442,7 @@ Bixby(
 Bixby(
   {
     pattern: "blackpink2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -456,7 +456,7 @@ Bixby(
 Bixby(
   {
     pattern: "blackpink3",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -470,7 +470,7 @@ Bixby(
 Bixby(
   {
     pattern: "blood",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -484,7 +484,7 @@ Bixby(
 Bixby(
   {
     pattern: "bokeh",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -498,7 +498,7 @@ Bixby(
 Bixby(
   {
     pattern: "bread",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -512,7 +512,7 @@ Bixby(
 Bixby(
   {
     pattern: "camerica",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -528,7 +528,7 @@ Bixby(
 Bixby(
   {
     pattern: "camerica2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -542,7 +542,7 @@ Bixby(
 Bixby(
   {
     pattern: "chocolate",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -556,7 +556,7 @@ Bixby(
 Bixby(
   {
     pattern: "christmas",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -570,7 +570,7 @@ Bixby(
 Bixby(
   {
     pattern: "christmas2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -584,7 +584,7 @@ Bixby(
 Bixby(
   {
     pattern: "christmas3",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -598,7 +598,7 @@ Bixby(
 Bixby(
   {
     pattern: "christmas4",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -612,7 +612,7 @@ Bixby(
 Bixby(
   {
     pattern: "christmas5",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -626,7 +626,7 @@ Bixby(
 Bixby(
   {
     pattern: "circuit",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -640,7 +640,7 @@ Bixby(
 Bixby(
   {
     pattern: "deepsea",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -654,7 +654,7 @@ Bixby(
 Bixby(
   {
     pattern: "deluxe",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -668,7 +668,7 @@ Bixby(
 Bixby(
   {
     pattern: "deluxe2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -682,7 +682,7 @@ Bixby(
 Bixby(
   {
     pattern: "demon",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -696,7 +696,7 @@ Bixby(
 Bixby(
   {
     pattern: "denim",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -710,7 +710,7 @@ Bixby(
 Bixby(
   {
     pattern: "devil",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -724,7 +724,7 @@ Bixby(
 Bixby(
   {
     pattern: "diamonds",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -738,7 +738,7 @@ Bixby(
 Bixby(
   {
     pattern: "equalizer",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -752,7 +752,7 @@ Bixby(
 Bixby(
   {
     pattern: "fabric",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -766,7 +766,7 @@ Bixby(
 Bixby(
   {
     pattern: "fade",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -780,7 +780,7 @@ Bixby(
 Bixby(
   {
     pattern: "flagamerica",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -794,7 +794,7 @@ Bixby(
 Bixby(
   {
     pattern: "giraffe",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -808,7 +808,7 @@ Bixby(
 Bixby(
   {
     pattern: "glass",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -822,7 +822,7 @@ Bixby(
 Bixby(
   {
     pattern: "glass2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -836,7 +836,7 @@ Bixby(
 Bixby(
   {
     pattern: "glitch",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -850,7 +850,7 @@ Bixby(
 Bixby(
   {
     pattern: "glitch2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -864,7 +864,7 @@ Bixby(
 Bixby(
   {
     pattern: "glossy",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -878,7 +878,7 @@ Bixby(
 Bixby(
   {
     pattern: "glue",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -892,7 +892,7 @@ Bixby(
 Bixby(
   {
     pattern: "golden",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -906,7 +906,7 @@ Bixby(
 Bixby(
   {
     pattern: "gradient",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -920,7 +920,7 @@ Bixby(
 Bixby(
   {
     pattern: "gradient2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -934,7 +934,7 @@ Bixby(
 Bixby(
   {
     pattern: "graffiti",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -948,7 +948,7 @@ Bixby(
 Bixby(
   {
     pattern: "graffiti2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -962,7 +962,7 @@ Bixby(
 Bixby(
   {
     pattern: "halloween",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -976,7 +976,7 @@ Bixby(
 Bixby(
   {
     pattern: "harrypotter",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -990,7 +990,7 @@ Bixby(
 Bixby(
   {
     pattern: "holograph",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1004,7 +1004,7 @@ Bixby(
 Bixby(
   {
     pattern: "l1917",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1018,7 +1018,7 @@ Bixby(
 Bixby(
   {
     pattern: "layered",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1034,7 +1034,7 @@ Bixby(
 Bixby(
   {
     pattern: "leaves",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1048,7 +1048,7 @@ Bixby(
 Bixby(
   {
     pattern: "love",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1062,7 +1062,7 @@ Bixby(
 Bixby(
   {
     pattern: "love2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1076,7 +1076,7 @@ Bixby(
 Bixby(
   {
     pattern: "love3",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1090,7 +1090,7 @@ Bixby(
 Bixby(
   {
     pattern: "luxury",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1104,7 +1104,7 @@ Bixby(
 Bixby(
   {
     pattern: "luxury2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1118,7 +1118,7 @@ Bixby(
 Bixby(
   {
     pattern: "magma",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1132,7 +1132,7 @@ Bixby(
 Bixby(
   {
     pattern: "marvel",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1148,7 +1148,7 @@ Bixby(
 Bixby(
   {
     pattern: "marvel2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1164,7 +1164,7 @@ Bixby(
 Bixby(
   {
     pattern: "matrix",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1178,7 +1178,7 @@ Bixby(
 Bixby(
   {
     pattern: "metal",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1192,7 +1192,7 @@ Bixby(
 Bixby(
   {
     pattern: "metal2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1206,7 +1206,7 @@ Bixby(
 Bixby(
   {
     pattern: "metal3",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1220,7 +1220,7 @@ Bixby(
 Bixby(
   {
     pattern: "metal4",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1234,7 +1234,7 @@ Bixby(
 Bixby(
   {
     pattern: "metal5",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1248,7 +1248,7 @@ Bixby(
 Bixby(
   {
     pattern: "metal6",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1262,7 +1262,7 @@ Bixby(
 Bixby(
   {
     pattern: "metal7",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1276,7 +1276,7 @@ Bixby(
 Bixby(
   {
     pattern: "metal8",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1290,7 +1290,7 @@ Bixby(
 Bixby(
   {
     pattern: "metal9",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1304,7 +1304,7 @@ Bixby(
 Bixby(
   {
     pattern: "minion",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1318,7 +1318,7 @@ Bixby(
 Bixby(
   {
     pattern: "neon",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1332,7 +1332,7 @@ Bixby(
 Bixby(
   {
     pattern: "neon2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1346,7 +1346,7 @@ Bixby(
 Bixby(
   {
     pattern: "neon3",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1360,7 +1360,7 @@ Bixby(
 Bixby(
   {
     pattern: "neon4",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1374,7 +1374,7 @@ Bixby(
 Bixby(
   {
     pattern: "neon5",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1388,7 +1388,7 @@ Bixby(
 Bixby(
   {
     pattern: "neon6",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1402,7 +1402,7 @@ Bixby(
 Bixby(
   {
     pattern: "newyear",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1416,7 +1416,7 @@ Bixby(
 Bixby(
   {
     pattern: "orange",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1430,7 +1430,7 @@ Bixby(
 Bixby(
   {
     pattern: "papercut",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1444,7 +1444,7 @@ Bixby(
 Bixby(
   {
     pattern: "papercut2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1458,7 +1458,7 @@ Bixby(
 Bixby(
   {
     pattern: "phub",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1472,7 +1472,7 @@ Bixby(
 Bixby(
   {
     pattern: "pottery",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1486,7 +1486,7 @@ Bixby(
 Bixby(
   {
     pattern: "quote",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1500,7 +1500,7 @@ Bixby(
 Bixby(
   {
     pattern: "r2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1514,7 +1514,7 @@ Bixby(
 Bixby(
   {
     pattern: "rainbow",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1528,7 +1528,7 @@ Bixby(
 Bixby(
   {
     pattern: "retro",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1542,7 +1542,7 @@ Bixby(
 Bixby(
   {
     pattern: "retro2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1558,7 +1558,7 @@ Bixby(
 Bixby(
   {
     pattern: "sand",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1572,7 +1572,7 @@ Bixby(
 Bixby(
   {
     pattern: "sand2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1586,7 +1586,7 @@ Bixby(
 Bixby(
   {
     pattern: "sand3",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1600,7 +1600,7 @@ Bixby(
 Bixby(
   {
     pattern: "sand4",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1614,7 +1614,7 @@ Bixby(
 Bixby(
   {
     pattern: "scifi",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1628,7 +1628,7 @@ Bixby(
 Bixby(
   {
     pattern: "scifi2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1642,7 +1642,7 @@ Bixby(
 Bixby(
   {
     pattern: "scifi3",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1656,7 +1656,7 @@ Bixby(
 Bixby(
   {
     pattern: "skeleton",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1670,7 +1670,7 @@ Bixby(
 Bixby(
   {
     pattern: "sketch",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1684,7 +1684,7 @@ Bixby(
 Bixby(
   {
     pattern: "sky",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1698,7 +1698,7 @@ Bixby(
 Bixby(
   {
     pattern: "sky2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1712,7 +1712,7 @@ Bixby(
 Bixby(
   {
     pattern: "sliced",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1726,7 +1726,7 @@ Bixby(
 Bixby(
   {
     pattern: "space",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1740,7 +1740,7 @@ Bixby(
 Bixby(
   {
     pattern: "space2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1756,7 +1756,7 @@ Bixby(
 Bixby(
   {
     pattern: "sparkle",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1770,7 +1770,7 @@ Bixby(
 Bixby(
   {
     pattern: "spooky",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1784,7 +1784,7 @@ Bixby(
 Bixby(
   {
     pattern: "spooky2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1800,7 +1800,7 @@ Bixby(
 Bixby(
   {
     pattern: "spooky3",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1816,7 +1816,7 @@ Bixby(
 Bixby(
   {
     pattern: "steel",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1830,7 +1830,7 @@ Bixby(
 Bixby(
   {
     pattern: "stone",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1844,7 +1844,7 @@ Bixby(
 Bixby(
   {
     pattern: "stone2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1858,7 +1858,7 @@ Bixby(
 Bixby(
   {
     pattern: "stone3",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1872,7 +1872,7 @@ Bixby(
 Bixby(
   {
     pattern: "stone4",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1888,7 +1888,7 @@ Bixby(
 Bixby(
   {
     pattern: "strawberry",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1902,7 +1902,7 @@ Bixby(
 Bixby(
   {
     pattern: "summer",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1916,7 +1916,7 @@ Bixby(
 Bixby(
   {
     pattern: "summer2",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1930,7 +1930,7 @@ Bixby(
 Bixby(
   {
     pattern: "thor",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1944,7 +1944,7 @@ Bixby(
 Bixby(
   {
     pattern: "thunder",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1958,7 +1958,7 @@ Bixby(
 Bixby(
   {
     pattern: "title",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1972,7 +1972,7 @@ Bixby(
 Bixby(
   {
     pattern: "toxic",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -1986,7 +1986,7 @@ Bixby(
 Bixby(
   {
     pattern: "transformers",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -2000,7 +2000,7 @@ Bixby(
 Bixby(
   {
     pattern: "typography",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -2014,7 +2014,7 @@ Bixby(
 Bixby(
   {
     pattern: "underwater",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -2028,7 +2028,7 @@ Bixby(
 Bixby(
   {
     pattern: "vintage",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -2044,7 +2044,7 @@ Bixby(
 Bixby(
   {
     pattern: "watercolor",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -2058,7 +2058,7 @@ Bixby(
 Bixby(
   {
     pattern: "waterpipe",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -2072,7 +2072,7 @@ Bixby(
 Bixby(
   {
     pattern: "whitegold",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -2086,7 +2086,7 @@ Bixby(
 Bixby(
   {
     pattern: "wicker",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -2100,7 +2100,7 @@ Bixby(
 Bixby(
   {
     pattern: "window",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
@@ -2114,7 +2114,7 @@ Bixby(
 Bixby(
   {
     pattern: "winter",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     dontAddCommandList: false,
     type: "Textpro",
   },
