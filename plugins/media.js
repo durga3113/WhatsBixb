@@ -18,6 +18,7 @@ const {
 const { yta, ytIdRegex, ytv } = require("../lib/yotube");
 const { search } = require("yt-search");
 const { toAudio } = require("../lib/ffmpeg");
+const { ffmpeg } = require("../lib/myffmpeg")
 let gis = require("g-i-s");
 const { AddMp3Meta } = require("../lib");
 
