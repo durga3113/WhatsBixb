@@ -33,7 +33,6 @@
     "browser-id3-writer": "^4.4.0",
     "crypto-js": "^4.1.1",
     "file-type": "^16.5.3",
-    "ffmpeg": "^0.0.4",
     "fluent-ffmpeg": "^2.1.2",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@ffprobe-installer/ffprobe": "^2.1.2",
