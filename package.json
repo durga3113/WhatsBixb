@@ -30,6 +30,7 @@
     "bitly": "^7.1.2",
     "bixby-md": "^2.1.4",
     "imgbb-uploader": "^1.4.0",
+    "google-tts-api": "^2.0.2",
     "aes256": "^1.1.0",
     "browser-id3-writer": "^4.4.0",
     "crypto-js": "^4.1.1",
