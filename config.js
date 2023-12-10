@@ -22,6 +22,7 @@ module.exports = {
   HANDLERS: process.env.PREFIX || '[.]',
   BOT_INFO : "",
   RMBG_KEY: process.env.RMBG_KEY || false,
+  IMGBB_KEY: process.env.IMGBB_KEY || "",
   BRANCH: "master",
   PACKNAME: process.env.PACKNAME || "WhatsBixby",
   WELCOME_MSG:
