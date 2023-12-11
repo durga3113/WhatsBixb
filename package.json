@@ -25,6 +25,7 @@
   "dependencies": {
     "@whiskeysockets/baileys": "git+https://github.com/Afx-Abu/baileys.ml",
     "@adiwajshing/keyed-db": "^0.2.4",
+    "@xaviabot/fb-downloader": "^1.0.14",
     "@bochilteam/scraper": "3.0.0",
     "@neeraj-x0/textpro": "^1.0.3",
     "bitly": "^7.1.2",
