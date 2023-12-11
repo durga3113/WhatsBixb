@@ -9,7 +9,7 @@ const { Bixby, isPublic } = require("../lib/");
 const { isAdmin, parsedJid, isUrl } = require("../lib");
 const { cron, saveSchedule } = require("../lib/scheduler");
 
-command(
+Bixby(
   {
     pattern: "join",
     fromMe: isPrivate,  
