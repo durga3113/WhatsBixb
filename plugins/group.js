@@ -12,7 +12,7 @@ const { cron, saveSchedule } = require("../lib/scheduler");
 Bixby(
   {
     pattern: "join",
-    fromMe: isPrivate,  
+    fromMe: isPublic,  
     desc: "joins a group link",
     type: "group",
   },
