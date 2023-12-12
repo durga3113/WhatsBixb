@@ -6,16 +6,6 @@ WhatsBixby - Ziyan
 
 const { Bixby } = require("../lib");
 
-Bixby({
-        pattern: "save", 
-        fromMe: true,
-        desc: "used to save messages", 
-        type: "misc",
-    },
-    async (message, match) => {
-    return await message.forward(message.dm, message.reply_message, { quoted: message.data });
-});
-
 Bixby(
   {
     pattern: "setpp",
