@@ -54,6 +54,6 @@ module.exports = {
   OWNER_NAME: process.env.OWNER_NAME || "ᴛᴏxɪᴄʟᴇᴏ-ᴍᴅ",
   BOT_NAME: process.env.BOT_NAME || "whatsbixby",
   WORK_TYPE: process.env.WORK_TYPE || "public",
-  BOT_INFO: process.env.BOT_INFO || 'ᴡʜᴀᴛꜱ ʙɪxʙʏ;ᴛʜɪꜱ ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ ᴢɪʏᴀɴ;https://graph.org/file/92119369714c2d0f509b9.jpg',
+  BOT_INFO: process.env.BOT_INFO || 'ᴡʜᴀᴛꜱ ʙɪxʙʏ;ᴛʜɪꜱ ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ ᴢɪʏᴀɴ;©ʙɪxʙʏ ɪɴᴄ;https://graph.org/file/92119369714c2d0f509b9.jpg',
   
 };
