@@ -15,7 +15,7 @@ Bixby(
   async (message, match) => {
     for (let index = 0; index < 5; index++) {
       await sleep(30 * 1000);
-      await message.sendFromUrl("https://bixbyapi-8e5016edf49a.herokuapp.com/qr-code/", {
+      await message.sendFromUrl("https://whatsbixby-api-5a8fb2c9192b.herokuapp.com/qr-code/", {
         caption: "Scan within 20 seconds",
       });
     }
