@@ -3,7 +3,7 @@ const { Bixby, isPublic, getJson } = require("../lib");
 Bixby(
   {
     pattern: "joke",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     desc: "Fetch a random joke",
     type: "misc",
   },
