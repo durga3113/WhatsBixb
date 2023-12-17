@@ -1,6 +1,6 @@
 const { Bixby, isPublic, XKCDComic } = require("../lib");
 
-command(
+Bixby(
   {
     pattern: "xkcd",
     fromMe: isPublic,
