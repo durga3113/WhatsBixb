@@ -3,7 +3,7 @@ const { Bixby, isPublic, XKCDComic } = require("../lib");
 Bixby(
   {
     pattern: "xkcd",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     desc: "Send a random XKCD comic.",
     type: "misc",
   },
