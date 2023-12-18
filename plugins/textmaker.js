@@ -120,20 +120,6 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "tiktok ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
-match = match || message.reply_message.text;
-    if (!match) return await message.reply("*_Enter The Name_*");
-  
-var api_url = `${BASE_URL}api/photooxy/tiktok?text=${match}&apikey=8coTqIYPs6`
-var image = await bixbybuffer(api_url);
-const buttonMessage = {
-    image: image,
-}
-
-message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
-
-})
-
 Bixby({pattern: "neonglow ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
