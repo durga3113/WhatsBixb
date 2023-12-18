@@ -161,3 +161,171 @@ const buttonMessage = {
 message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
+
+Bixby({pattern: "flower-typo ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Enter The Name_*");
+  
+var api_url = `${BASE_URL}api/photooxy/flower-typography?text=${match}&apikey=8coTqIYPs6`
+var image = await bixbybuffer(api_url);
+const buttonMessage = {
+    image: image,
+}
+
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+
+})
+
+Bixby({pattern: "coffecup ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Enter The Name_*");
+  
+var api_url = `${BASE_URL}api/photooxy/coffe-cup?text=${match}&apikey=8coTqIYPs6`
+var image = await bixbybuffer(api_url);
+const buttonMessage = {
+    image: image,
+}
+
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+
+})
+
+Bixby({pattern: "metalglow ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Enter The Name_*");
+  
+var api_url = `${BASE_URL}api/photooxy/metal-glow?text=${match}&apikey=8coTqIYPs6`
+var image = await bixbybuffer(api_url);
+const buttonMessage = {
+    image: image,
+}
+
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+
+})
+
+Bixby({pattern: "woodblock ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Enter The Name_*");
+  
+var api_url = `${BASE_URL}api/photooxy/woodblock?text=${match}&apikey=8coTqIYPs6`
+var image = await bixbybuffer(api_url);
+const buttonMessage = {
+    image: image,
+}
+
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+
+})
+
+Bixby({pattern: "metalneon ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Enter The Name_*");
+  
+var api_url = `${BASE_URL}api/photooxy/metalneon?text=${match}&apikey=8coTqIYPs6`
+var image = await bixbybuffer(api_url);
+const buttonMessage = {
+    image: image,
+}
+
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+
+})
+
+Bixby({pattern: "burnpaper ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Enter The Name_*");
+  
+var api_url = `${BASE_URL}api/photooxy/burnpaper?text=${match}&apikey=8coTqIYPs6`
+var image = await bixbybuffer(api_url);
+const buttonMessage = {
+    image: image,
+}
+
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+
+})
+
+Bixby({pattern: "nightsky ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Enter The Name_*");
+  
+var api_url = `${BASE_URL}api/photooxy/nightsky?text=${match}&apikey=8coTqIYPs6`
+var image = await bixbybuffer(api_url);
+const buttonMessage = {
+    image: image,
+}
+
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+
+})
+
+Bixby({pattern: "cemetery-gate ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Enter The Name_*");
+  
+var api_url = `${BASE_URL}api/photooxy/cemetery-gate?text=${match}&apikey=8coTqIYPs6`
+var image = await bixbybuffer(api_url);
+const buttonMessage = {
+    image: image,
+}
+
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+
+})
+
+Bixby({pattern: "underocean ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Enter The Name_*");
+  
+var api_url = `${BASE_URL}api/photooxy/underocean?text=${match}&apikey=8coTqIYPs6`
+var image = await bixbybuffer(api_url);
+const buttonMessage = {
+    image: image,
+}
+
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+
+})
+
+Bixby({pattern: "partyneon ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Enter The Name_*");
+  
+var api_url = `${BASE_URL}api/photooxy/partyneon?text=${match}&apikey=8coTqIYPs6`
+var image = await bixbybuffer(api_url);
+const buttonMessage = {
+    image: image,
+}
+
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+
+})
+
+Bixby({pattern: "graffiti ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Enter The Name_*");
+  
+var api_url = `${BASE_URL}api/photooxy/graffiti?text=${match}&apikey=8coTqIYPs6`
+var image = await bixbybuffer(api_url);
+const buttonMessage = {
+    image: image,
+}
+
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+
+})
+
+Bixby({pattern: "candy-text ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Enter The Name_*");
+  
+var api_url = `${BASE_URL}api/photooxy/candy-text?text=${match}&apikey=8coTqIYPs6`
+var image = await bixbybuffer(api_url);
+const buttonMessage = {
+    image: image,
+}
+
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+
+})
