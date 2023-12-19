@@ -52,7 +52,7 @@ module.exports = {
   SUDO: process.env.SUDO || "919446072492",
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || " ",
   HEROKU_API_KEY: process.env.HEROKU_API_KEY || " ",
-  OWNER_NAME: process.env.OWNER_NAME || "ᴛᴏxɪᴄʟᴇᴏ-ᴍᴅ",
+  OWNER_NAME: process.env.OWNER_NAME || "ᴢɪʏᴀɴ",
   BOT_NAME: process.env.BOT_NAME || "whatsbixby",
   WORK_TYPE: process.env.WORK_TYPE || "public",
   BOT_INFO: process.env.BOT_INFO || 'ᴡʜᴀᴛꜱ ʙɪxʙʏ;ᴛʜɪꜱ ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ ᴢɪʏᴀɴ;©ʙɪxʙʏ ɪɴᴄ;https://graph.org/file/92119369714c2d0f509b9.jpg',
