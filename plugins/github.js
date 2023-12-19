@@ -1,5 +1,6 @@
 const { Bixby, isPublic } = require("../lib/");
 const axios = require('axios')
+const config = require("../config");
 
 Bixby({
 
