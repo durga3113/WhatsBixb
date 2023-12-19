@@ -1,7 +1,7 @@
-const { Bixby, isPublic } = require("../lib/");
+const { Bixby, isPublic, tiny } = require("../lib/");
 const axios = require('axios')
 const config = require("../config");
-
+const {BASE_URL} = require("../config");
 Bixby({
 
 	pattern: 'github ?(.*)',	
@@ -10,7 +10,11 @@ Bixby({
     type: 'search',
 
 }, async (message, match) => {
-const _0x38a5f4=_0x54ea;function _0x5df0(){const _0x41eb57=['87416rLbdxZ','*_Give\x20me\x20user\x20name*','result','BOT_NAME','data','sendMessage','*\x0a_👩‍💻\x20Bio:_\x20*','*\x0a_🐌\x20Followers:_\x20*','17LvQqgJ','https://whatsbixby-api-5a8fb2c9192b.herokuapp.com/api/other/github-stalk?username=','1014351VvOSGQ','5262440ZLQoMz','N/A','1466480scfdyt','20558rHuvaC','jid','6hJwTkw','128jUxYBG','777384yPstqC','\x0a\x0a*','get','2137665qAAlDS','reply_message','*\x0a_🌷\x20Public\x20Repos:_\x20*','*\x0a_👥\x20Following:_\x20*'];_0x5df0=function(){return _0x41eb57;};return _0x5df0();}function _0x54ea(_0x41f9d4,_0x2b6839){const _0x5df0c4=_0x5df0();return _0x54ea=function(_0x54ea9d,_0x19e631){_0x54ea9d=_0x54ea9d-0x196;let _0x4b3bfc=_0x5df0c4[_0x54ea9d];return _0x4b3bfc;},_0x54ea(_0x41f9d4,_0x2b6839);}(function(_0xa28cbf,_0x1302bb){const _0x479770=_0x54ea,_0x53366c=_0xa28cbf();while(!![]){try{const _0x17ae5d=parseInt(_0x479770(0x196))/0x1*(-parseInt(_0x479770(0x19c))/0x2)+-parseInt(_0x479770(0x198))/0x3+parseInt(_0x479770(0x19b))/0x4+parseInt(_0x479770(0x1a3))/0x5*(-parseInt(_0x479770(0x19e))/0x6)+-parseInt(_0x479770(0x1a7))/0x7*(-parseInt(_0x479770(0x19f))/0x8)+parseInt(_0x479770(0x1a0))/0x9+parseInt(_0x479770(0x199))/0xa;if(_0x17ae5d===_0x1302bb)break;else _0x53366c['push'](_0x53366c['shift']());}catch(_0x222d54){_0x53366c['push'](_0x53366c['shift']());}}}(_0x5df0,0x3a43f),match=match||message[_0x38a5f4(0x1a4)]['text']);if(!match)return await message['reply'](_0x38a5f4(0x1a8));const response=await axios[_0x38a5f4(0x1a2)](_0x38a5f4(0x197)+match+'&apikey=8coTqIYPs6'),{login,name,bio,followers,public_repos,following,blog,avatar_url}=response[_0x38a5f4(0x1ab)][_0x38a5f4(0x1a9)],gittext='\x0a*乂\x20USER\x20GITHUB\x20INFORMATION\x20乂*\x0a_👤\x20Username:_\x20*'+login+'*\x0a_👤\x20Name:_\x20*'+(name||_0x38a5f4(0x19a))+_0x38a5f4(0x1ad)+(bio||_0x38a5f4(0x19a))+_0x38a5f4(0x1ae)+followers+_0x38a5f4(0x1a5)+public_repos+_0x38a5f4(0x1a6)+following+'*\x0a_📌\x20Website:_\x20'+(blog||'N/A')+_0x38a5f4(0x1a1)+config[_0x38a5f4(0x1aa)]+'*\x0a';await message['client'][_0x38a5f4(0x1ac)](message[_0x38a5f4(0x19d)],{'text':gittext},{'quoted':message});
+match = match || message.reply_message.text;
+ if (!match) return await message.reply("*_Give me user name*");
+const response = await axios.get(`${BASE_URL}api/other/github-stalk?username=${match}&apikey=8coTqIYPs6`
+       );
+const _0x103823=_0xaeb8;function _0xaeb8(_0x4cf6ec,_0x47c762){const _0x358ac7=_0x358a();return _0xaeb8=function(_0xaeb8e4,_0x173a9a){_0xaeb8e4=_0xaeb8e4-0x119;let _0x4e7779=_0x358ac7[_0xaeb8e4];return _0x4e7779;},_0xaeb8(_0x4cf6ec,_0x47c762);}(function(_0x447aad,_0x350a7e){const _0x32d4da=_0xaeb8,_0x1882bb=_0x447aad();while(!![]){try{const _0x242110=-parseInt(_0x32d4da(0x12c))/0x1+-parseInt(_0x32d4da(0x122))/0x2*(-parseInt(_0x32d4da(0x121))/0x3)+parseInt(_0x32d4da(0x11c))/0x4+-parseInt(_0x32d4da(0x124))/0x5+parseInt(_0x32d4da(0x119))/0x6+parseInt(_0x32d4da(0x11a))/0x7+parseInt(_0x32d4da(0x129))/0x8;if(_0x242110===_0x350a7e)break;else _0x1882bb['push'](_0x1882bb['shift']());}catch(_0x898a52){_0x1882bb['push'](_0x1882bb['shift']());}}}(_0x358a,0xd808d));const {login,name,bio,followers,public_repos,following,blog,avatar_url}=response[_0x103823(0x120)][_0x103823(0x125)],gittext=_0x103823(0x128)+login+_0x103823(0x123)+(name||'N/A')+_0x103823(0x126)+(bio||_0x103823(0x11b))+_0x103823(0x12a)+followers+_0x103823(0x11e)+public_repos+_0x103823(0x127)+following+_0x103823(0x11f)+(blog||_0x103823(0x11b))+'*\x0a';await message[_0x103823(0x11d)][_0x103823(0x12b)](message['jid'],{'image':{'url':avatar_url},'caption':tiny(gittext)},{'quoted':message});function _0x358a(){const _0x5711d7=['*\x0a_🌐\x20Website:_\x20','data','18IIiRPE','97628SZOzzo','*\x0a_👤\x20Name:_\x20*','8772120ElsHAp','result','*\x0a_👩‍💻\x20Bio:_\x20*','*\x0a_👥\x20Following:_\x20*','\x0a*\x20USER\x20GITHUB\x20INFORMATION\x20*\x0a_👤\x20Username:_\x20*','7409080HteJkF','*\x0a_🐌\x20Followers:_\x20*','sendMessage','1273712GOSKxK','8057934OHkYxi','7501501uGZYDr','N/A','1117448Hwilgz','client','*\x0a_🌷\x20Public\x20Repos:_\x20*'];_0x358a=function(){return _0x5711d7;};return _0x358a();}
         }
 
-    )
+    )	
