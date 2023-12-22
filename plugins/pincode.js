@@ -12,7 +12,7 @@ Bixby({
 }, async (message, match) => {
 match = match || message.reply_message.text;
  if (!match) return await message.reply("*_Give me any pincode*");
- pincodeimg = "";
+ pincodeimg = "https://graph.org/file/31817366c5e2557a595d9.jpg";
  pincodeimg1 = await bixbybuffer(pincodeimg)
 const response = await axios.get(`https://whatsbixby-api-5a8fb2c9192b.herokuapp.com/api/other/pincode?pincode=${match}&apikey=8coTqIYPs6`
        );
