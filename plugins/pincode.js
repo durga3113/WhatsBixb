@@ -5,7 +5,7 @@ WhatsBixby - Ziyan
 */
 
 const { Bixby, isPublic } = require("../lib/");
-const axios = require('axiox')
+const axios = require('axios')
 const { BASE_URL } = require("../config");
 
 Bixby({
