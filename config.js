@@ -18,6 +18,7 @@ module.exports = {
   API_KEY : "8coTqIYPs6", //login here and get api key https://whatsbixby-api-5a8fb2c9192b.herokuapp.com/users/login
   ANTILINK: toBool(process.env.ANTI_LINK) || false,
   LOGS: toBool(process.env.LOGS) || true,
+  BGMBOT : toBool(process.env.BGMBOT || "false"),
   ANTILINK_ACTION: process.env.ANTI_LINK || "kick",
   SESSION_ID:process.env.SESSION_ID || "",
   LANGUAGE: process.env.LANGUAGE || "english",
