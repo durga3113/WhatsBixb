@@ -4,4 +4,16 @@ you may not use this file except in compliance with the License.
 WhatsBixby - Ziyan
 */
 
-function _0xd635(){const _0xbe008f=['Its\x20converte\x20your\x20text\x20to\x20voice','114212bRJNOi','1005271MaBojm','24ZuUNjj','1932518JwBnZA','143916ZLLrTK','4513692fpJwzg','10snVMqZ','669375VwTYxY','7172SXMVUU','145dQAWnn','converter','3984iZYLqe','8eqqgTz'];_0xd635=function(){return _0xbe008f;};return _0xd635();}const _0x2dc9a4=_0x147d;(function(_0x5ef2f5,_0x5c2848){const _0x916e97=_0x147d,_0x5583c3=_0x5ef2f5();while(!![]){try{const _0x1b65b7=parseInt(_0x916e97(0x120))/0x1+parseInt(_0x916e97(0x123))/0x2*(-parseInt(_0x916e97(0x121))/0x3)+parseInt(_0x916e97(0x11f))/0x4*(parseInt(_0x916e97(0x11a))/0x5)+-parseInt(_0x916e97(0x116))/0x6+-parseInt(_0x916e97(0x122))/0x7*(parseInt(_0x916e97(0x11d))/0x8)+parseInt(_0x916e97(0x118))/0x9*(parseInt(_0x916e97(0x117))/0xa)+parseInt(_0x916e97(0x119))/0xb*(parseInt(_0x916e97(0x11c))/0xc);if(_0x1b65b7===_0x5c2848)break;else _0x5583c3['push'](_0x5583c3['shift']());}catch(_0x1b89d9){_0x5583c3['push'](_0x5583c3['shift']());}}}(_0xd635,0x7efbf));function _0x147d(_0x270ac4,_0x1b79a9){const _0xd6351c=_0xd635();return _0x147d=function(_0x147d83,_0x1e97ed){_0x147d83=_0x147d83-0x116;let _0x480b45=_0xd6351c[_0x147d83];return _0x480b45;},_0x147d(_0x270ac4,_0x1b79a9);}const {sendTts}=require('../lib/tts'),{Bixby,isPublic}=require('../lib');Bixby({'pattern':'tts?(.*)','fromMe':isPublic,'desc':_0x2dc9a4(0x11e),'type':_0x2dc9a4(0x11b)},async(_0x26fea3,_0x527e64)=>{await sendTts(_0x26fea3,_0x527e64);});
+const { sendTts } = require("../lib/tts");
+const { Bixby, isPublic } = require("../lib");
+
+Bixby(
+  {
+    pattern: "tts",
+    fromMe: isPublic,
+    desc: "text to speech",
+    type: "converter",
+  },  
+		async (message, match) => {			
+         await sendTts(message, match);
+})
