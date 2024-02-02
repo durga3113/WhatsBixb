@@ -14,7 +14,7 @@ const toBool = (x) => x == "true";
 DATABASE_URL = process.env.DATABASE_URL || "./lib/database.db";
 let HANDLER = "false";
 module.exports = {
-  BASE_URL : "https://whatsbixby-api-5a8fb2c9192b.herokuapp.com/",
+  BASE_URL : "https://bixby-api-b4eb9347a9ab.herokuapp.com/",
   API_KEY : "8coTqIYPs6", //login here and get api key https://whatsbixby-api-5a8fb2c9192b.herokuapp.com/users/login
   ANTILINK: toBool(process.env.ANTI_LINK) || false,
   LOGS: toBool(process.env.LOGS) || true,
