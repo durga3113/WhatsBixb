@@ -9,10 +9,10 @@ const axios = require('axios')
 const { BASE_URL, API_KEY } = require("../config");
 
 Bixby({
-	pattern: 'ig ?(.*)',	
-	fromMe: isPublic,
-	desc: 'insta profile search',
-  type: 'search',
+pattern: 'ig ?(.*)',	
+fromMe: isPublic,
+desc: 'insta profile search',
+type: 'search',
   },
   async (message, match) => {
 match = match || message.reply_message.text;
