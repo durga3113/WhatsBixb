@@ -16,11 +16,9 @@ Bixby(
     type: "downloader",
   },
   async (message, match) => {
-		if (!match) return await message.reply('Please provide a Pinterest URL');
-		if (!isUrl(match)) return await message.reply('Please provide a valid Pinterest URL');
-		const {
-			result
-		} = await getJson(`${BASE_URL}api/downloader/pinterest?url=${match}&apikey=${API_KEY}`);
+  if (!match) return await message.reply('Please provide a Pinterest URL');
+  if (!isUrl(match)) return await message.reply('Please provide a valid Pinterest URL');
+  const {result} = await getJson(`${BASE_URL}api/downloader/pinterest?url=${match}&apikey=${API_KEY}`);
     if (result.data.media_type === "image/jpeg") {
     var image = await bixbybuffer(result.data.image);
     const imageMessage = {
