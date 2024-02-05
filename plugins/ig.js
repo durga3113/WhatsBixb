@@ -10,7 +10,7 @@ const { BASE_URL, API_KEY } = require("../config");
 
 Bixby(
   {
-    pattern: "ig",
+    pattern: "igsearch",
     fromMe: isPublic,
     desc: "insta profile search",
     type: "search",
