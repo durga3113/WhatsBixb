@@ -5,13 +5,13 @@ WhatsBixby - Ziyan
 */
 //credits to neeraj-xo
 
-const { Bixby } = require("../lib/");
+const { Bixby, isPublic } = require("../lib/");
 let db = {};
 
 Bixby(
   {
     pattern: "ludo",
-    fromMe: false,
+    fromMe: isPublic,
     desc: "play ludo",
     type: "user",
   },
