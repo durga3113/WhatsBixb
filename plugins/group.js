@@ -431,7 +431,7 @@ Bixby(
 Bixby(
   {
     pattern: "kickall",
-    fromMe: isPrivate,
+    fromMe: isPublic,
     desc: "Adds a person to group",
     type: "group",
   },
