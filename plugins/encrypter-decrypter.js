@@ -85,3 +85,30 @@ const decodeascii = String.fromCharCode(match);
 m.reply(decodeascii);
 });
 
+Bixby({
+          pattern: "ehex ?(.*)",
+          fromMe: isPublic,
+          desc: "encrypt text to hexadecimal",
+          type: "converter"}, 
+          async (m, match) => {
+match = match || m.reply_message.text
+if (!match) return await m.reply("Give me any text")
+
+const myString = match;
+const encodedHex = Buffer.from(myString).toString('hex');
+m.reply(encodedHex);
+});
+
+Bixby({
+          pattern: "dhex ?(.*)",
+          fromMe: isPublic,
+          desc: "decrypt hexadecimal to text",
+          type: "converter"}, 
+          async (m, match) => {
+match = match || m.reply_message.text
+if (!match) return await m.reply("Give me any hexadecimal")
+
+const encodedHex = match;
+const decodedString = Buffer.from(encodedHex, 'hex').toString();
+m.reply(decodedString);
+});
