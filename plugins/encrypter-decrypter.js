@@ -73,3 +73,15 @@ for (let i = 0; i < text.length; i++) {
 m.reply(asciiValues);
 });
 
+Bixby({
+          pattern: "dascii ?(.*)",
+          fromMe: isPublic,
+          desc: "decrypt ascii to text",
+          type: "converter"}, 
+          async (m, match) => {
+match = match || m.reply_message.text
+if (!match) return await m.reply("Give me ascii to decrypt")
+const decodeascii = String.fromCharCode(match);
+m.reply(decodeascii);
+});
+
