@@ -42,7 +42,7 @@ m.reply(encodedString);
 });
 
 Bixby({
-          pattern: "ebase64 ?(.*)",
+          pattern: "dbase64 ?(.*)",
           fromMe: isPublic,
           desc: "decrypt binary to text",
           type: "converter"}, 
