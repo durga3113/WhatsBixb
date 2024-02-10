@@ -8,10 +8,10 @@ const { Bixby, isPublic } = require("../lib/");
 const { eBinary, dBinary } = require("../lib/functions/binary");
 
 Bixby({
-          pattern: 'ebinary ?(.*)',
+          pattern: "ebinary ?(.*)",
           fromMe: isPublic,
-          desc: 'encrypt text to binary',
-          type: 'converter'}, 
+          desc: "encrypt text to binary",
+          type: "converter"}, 
           async (m, match) => {
 match = match || m.reply_message.text
 if (!match) return await m.reply("Give me a text to encrypt")
@@ -19,10 +19,10 @@ m.reply(await eBinary(match));
 });
 
 Bixby({
-          pattern: 'dbinary ?(.*)',
+          pattern: "dbinary ?(.*)",
           fromMe: isPublic,
-          desc: 'decrypt binary to text',
-          type: 'converter'}, 
+          desc: "decrypt binary to text",
+          type: "converter"}, 
           async (m, match) => {
 match = match || m.reply_message.text
 if (!match) return await m.reply("Give me a binary code")
