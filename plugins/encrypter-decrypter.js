@@ -53,3 +53,23 @@ var decodedString = atob(match);
 m.reply(decodedString);
 });
 
+Bixby({
+          pattern: "eascii ?(.*)",
+          fromMe: isPublic,
+          desc: "encrypt text to ascii",
+          type: "converter"}, 
+          async (m, match) => {
+match = match || m.reply_message.text
+if (!match) return await m.reply("give text to convert to ascii")
+
+const text = match;
+const asciiValues = [];
+
+for (let i = 0; i < text.length; i++) {
+  const asciiCode = text.charCodeAt(i);
+  asciiValues.push(asciiCode);
+}
+
+m.reply(asciiValues);
+});
+
