@@ -4,4 +4,17 @@ you may not use this file except in compliance with the License.
 WhatsBixby - Ziyan
 */
 
-const _0x11e368=_0x1933;(function(_0xef0621,_0xabdc08){const _0x3d2f97=_0x1933,_0x1c8434=_0xef0621();while(!![]){try{const _0x572287=parseInt(_0x3d2f97(0xaa))/0x1+parseInt(_0x3d2f97(0xa4))/0x2+parseInt(_0x3d2f97(0xa5))/0x3+parseInt(_0x3d2f97(0xa7))/0x4+-parseInt(_0x3d2f97(0xa1))/0x5+-parseInt(_0x3d2f97(0xa6))/0x6+parseInt(_0x3d2f97(0xab))/0x7*(-parseInt(_0x3d2f97(0xa8))/0x8);if(_0x572287===_0xabdc08)break;else _0x1c8434['push'](_0x1c8434['shift']());}catch(_0x56123a){_0x1c8434['push'](_0x1c8434['shift']());}}}(_0x456c,0xa530f));function _0x456c(){const _0x311016=['8ZvUwBm','Its\x20converte\x20your\x20text\x20to\x20aivoice','26353czGZxr','2523171KLkOpt','231490pVkoaZ','aitts?(.*)','../lib/','455024CuDUIM','2381085UMKfMP','6879882YbsQlE','4729844bjkWPH'];_0x456c=function(){return _0x311016;};return _0x456c();}const {Bixby,isPublic}=require(_0x11e368(0xa3)),{getAitts}=require('../lib/tts');function _0x1933(_0x2d97dc,_0x3e62c2){const _0x456c8d=_0x456c();return _0x1933=function(_0x1933ce,_0x13bca3){_0x1933ce=_0x1933ce-0xa1;let _0x5488a5=_0x456c8d[_0x1933ce];return _0x5488a5;},_0x1933(_0x2d97dc,_0x3e62c2);}Bixby({'pattern':_0x11e368(0xa2),'fromMe':isPublic,'desc':_0x11e368(0xa9),'type':'ai'},async(_0x17ec1b,_0x407ea3)=>{await getAitts(_0x17ec1b,_0x407ea3);});
+const { Bixby, isPublic } = require("../lib/");
+const { getAitts } = require("../lib/tts");
+
+Bixby(
+        {
+         
+        pattern: "aitts?(.*)",
+        fromMe: isPublic,
+        desc: "converte text to ai voice",
+        type: "ai",
+},
+		async (message, match) => {			
+        await getAitts(message, match);
+})
