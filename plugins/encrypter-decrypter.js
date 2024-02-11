@@ -5,7 +5,7 @@ WhatsBixby - Ziyan
 */
 
 const { Bixby, isPublic } = require("../lib/");
-const { eBinary, dBinary } = require("../lib/functions/binary");
+const { eBinary, dBinary, octalToText, textToOctal } = require("../lib/functions/binary");
 
 Bixby({
           pattern: "ebinary ?(.*)",
@@ -111,4 +111,30 @@ if (!match) return await m.reply("Give me any hexadecimal")
 const encodedHex = match;
 const decodedString = Buffer.from(encodedHex, 'hex').toString();
 m.reply(decodedString);
+});
+
+Bixby({
+          pattern: "eoctal ?(.*)",
+          fromMe: isPublic,
+          desc: "convert text to octal",
+          type: "encrypter"}, 
+          async (m, match) => {
+match = match || m.reply_message.text
+if (!match) return await m.reply("Give me any text")
+var inputText = match;
+var octalText = textToOctal(inputText);
+m.reply("Octal representation of '" + inputText + "': " + octalText);
+});
+
+Bixby({
+          pattern: "doctal ?(.*)",
+          fromMe: isPublic,
+          desc: "convert octal to text",
+          type: "encrypter"}, 
+          async (m, match) => {
+match = match || m.reply_message.text
+if (!match) return await m.reply("Give me any octal")
+var inputOctal = match;
+var textResult = octalToText(inputOctal);
+m.reply("Converted text: " + textResult);
 });
