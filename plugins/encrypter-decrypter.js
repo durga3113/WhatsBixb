@@ -5,7 +5,7 @@ WhatsBixby - Ziyan
 */
 
 const { Bixby, isPublic } = require("../lib/");
-const { eBinary, dBinary, octalToText, textToOctal } = require("../lib/functions/binary");
+const { eBinary, dBinary, octalToText, textToOctal } = require("../lib/functions/encrypter");
 
 Bixby({
           pattern: "ebinary ?(.*)",
