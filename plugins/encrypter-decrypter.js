@@ -11,7 +11,7 @@ Bixby({
           pattern: "ebinary ?(.*)",
           fromMe: isPublic,
           desc: "encrypt text to binary",
-          type: "converter"}, 
+          type: "encrypter"}, 
           async (m, match) => {
 match = match || m.reply_message.text
 if (!match) return await m.reply("Give me a text to encrypt")
@@ -22,7 +22,7 @@ Bixby({
           pattern: "dbinary ?(.*)",
           fromMe: isPublic,
           desc: "decrypt binary to text",
-          type: "converter"}, 
+          type: "encrypter"}, 
           async (m, match) => {
 match = match || m.reply_message.text
 if (!match) return await m.reply("Give me a binary code")
@@ -33,7 +33,7 @@ Bixby({
           pattern: "ebase64 ?(.*)",
           fromMe: isPublic,
           desc: "encrypt text to base64",
-          type: "converter"}, 
+          type: "encrypter"}, 
           async (m, match) => {
 match = match || m.reply_message.text
 if (!match) return await m.reply("Give me text to encrypt in base64")
@@ -45,7 +45,7 @@ Bixby({
           pattern: "dbase64 ?(.*)",
           fromMe: isPublic,
           desc: "decrypt base64 to text",
-          type: "converter"}, 
+          type: "encrypter"}, 
           async (m, match) => {
 match = match || m.reply_message.text
 if (!match) return await m.reply("Give me base64 to decrypt")
@@ -57,7 +57,7 @@ Bixby({
           pattern: "eascii ?(.*)",
           fromMe: isPublic,
           desc: "encrypt text to ascii",
-          type: "converter"}, 
+          type: "encrypter"}, 
           async (m, match) => {
 match = match || m.reply_message.text
 if (!match) return await m.reply("give text to convert to ascii")
@@ -77,7 +77,7 @@ Bixby({
           pattern: "dascii ?(.*)",
           fromMe: isPublic,
           desc: "decrypt ascii to text",
-          type: "converter"}, 
+          type: "encrypter"}, 
           async (m, match) => {
 match = match || m.reply_message.text
 if (!match) return await m.reply("Give me ascii to decrypt")
@@ -89,7 +89,7 @@ Bixby({
           pattern: "ehex ?(.*)",
           fromMe: isPublic,
           desc: "encrypt text to hexadecimal",
-          type: "converter"}, 
+          type: "encrypter"}, 
           async (m, match) => {
 match = match || m.reply_message.text
 if (!match) return await m.reply("Give me any text")
@@ -103,7 +103,7 @@ Bixby({
           pattern: "dhex ?(.*)",
           fromMe: isPublic,
           desc: "decrypt hexadecimal to text",
-          type: "converter"}, 
+          type: "encrypter"}, 
           async (m, match) => {
 match = match || m.reply_message.text
 if (!match) return await m.reply("Give me any hexadecimal")
