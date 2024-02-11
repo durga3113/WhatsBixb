@@ -32,11 +32,11 @@ m.reply(await dBinary(match));
 Bixby({
           pattern: "ebase64 ?(.*)",
           fromMe: isPublic,
-          desc: "decrypt binary to text",
+          desc: "encrypt text to base64",
           type: "converter"}, 
           async (m, match) => {
 match = match || m.reply_message.text
-if (!match) return await m.reply("Give me text to encode in base64")
+if (!match) return await m.reply("Give me text to encrypt in base64")
 var encodedString = btoa(match);
 m.reply(encodedString);
 });
@@ -44,7 +44,7 @@ m.reply(encodedString);
 Bixby({
           pattern: "dbase64 ?(.*)",
           fromMe: isPublic,
-          desc: "decrypt binary to text",
+          desc: "decrypt base64 to text",
           type: "converter"}, 
           async (m, match) => {
 match = match || m.reply_message.text
