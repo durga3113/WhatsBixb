@@ -41,9 +41,9 @@ function WhatsBixby_0x4e0211(_0x4ec065,_0x2b049b,_0x4a006e,_0x43ce8a,_0x3ad0dc){
 
 Bixby(
   {
-	  pattern: "photoleap ?(.*)",	
-	  fromMe: isPublic,
-	  desc: "generate image with photoleap",
+    pattern: "photoleap ?(.*)",	
+    fromMe: isPublic,
+    desc: "generate image with photoleap",
     type: "ai",
   },
   async (message, match) => {
