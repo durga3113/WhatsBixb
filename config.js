@@ -21,7 +21,10 @@ module.exports = {
   ANTILINK_ACTION: process.env.ANTI_LINK || "kick",
   SESSION_ID:process.env.SESSION_ID || "",
   LANGUAGE: process.env.LANGUAGE || "english",
-  PREFIX: process.env.PREFIX || '[.]',
+  PREFIX:
+    process.env.PREFIX === "false" || process.env.PREFIX === "null"
+      ? "^"
+      : "^[#]",
   BOT_INFO : "",
   RMBG_KEY: process.env.RMBG_KEY || false,
   IMGBB_KEY: process.env.IMGBB_KEY || "",
