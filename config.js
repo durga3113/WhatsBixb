@@ -12,7 +12,6 @@ if (fs.existsSync("config.env"))
 const toBool = (x) => x == "true";
 
 DATABASE_URL = process.env.DATABASE_URL || "./lib/database.db";
-let HANDLER = "false";
 module.exports = {
   BASE_URL : "https://bixby-api-b4eb9347a9ab.herokuapp.com/",
   API_KEY : "8coTqIYPs6", //login here and get api key https://bixby-api-b4eb9347a9ab.herokuapp.com/users/login
@@ -22,10 +21,7 @@ module.exports = {
   ANTILINK_ACTION: process.env.ANTI_LINK || "kick",
   SESSION_ID:process.env.SESSION_ID || "",
   LANGUAGE: process.env.LANGUAGE || "english",
-  HANDLERS:
-    process.env.HANDLER === "false" || process.env.HANDLER === "null"
-      ? "^"
-      : "^[#]",
+  PREFIX: process.env.PREFIX || '[.]',
   BOT_INFO : "",
   RMBG_KEY: process.env.RMBG_KEY || false,
   IMGBB_KEY: process.env.IMGBB_KEY || "",
