@@ -3,7 +3,7 @@ const axios = require("axios");
 
 Bixby(
   {
-    pattern: "ttt ?(.*)",
+    pattern: "ttt",
     fromMe: isPublic,
     desc: "Play TicTacToe",
     type: "game",

@@ -11,7 +11,7 @@ const {bixbybuffer} = require("bixby-md");
 
 Bixby(
   {
-    pattern: "pindl ?(.*)",
+    pattern: "pindl",
     fromMe: isPublic,
     desc: "download from pinterest",
     type: "downloader",
@@ -44,7 +44,7 @@ message.client.sendMessage(message.jid, videoMessage)
 
 
 Bixby({
- pattern: "yt-thumb ?(.*)",
+ pattern: "yt-thumb",
  fromMe: isPublic,  
  desc: "downloader"
 },

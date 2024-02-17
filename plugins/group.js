@@ -11,7 +11,7 @@ const { cron, saveSchedule } = require("../lib/scheduler");
 
 Bixby(
   {
-    pattern: "join ?(.*)",
+    pattern: "join",
     fromMe: true,
     desc: "Join in the group",
     type: "group",
@@ -23,7 +23,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "add ?(.*)",
+    pattern: "add",
     fromMe: isPublic,
     desc: " *Adds a person to group*",
     type: "group",
@@ -251,7 +251,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "tag ?(.*)",
+    pattern: "tag",
     fromMe: true,
     desc: "mention all users in group",
     type: "group",
@@ -270,7 +270,7 @@ Bixby(
 );
 Bixby(
   {
-    pattern: "poll ?(.*)",
+    pattern: "poll",
     fromMe: true,
     desc: "create poll",
     type: "group",
@@ -304,7 +304,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "invite ?(.*)",
+    pattern: "invite",
     fromMe: true,
     desc: "Provides the group's invitation link.",
     type: "group",
@@ -316,7 +316,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "revoke ?(.*)",
+    pattern: "revoke",
     fromMe: true,
     desc: "Revoke Group invite link.",
     type: "group",
@@ -328,7 +328,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "left ?(.*)",
+    pattern: "left",
     fromMe: true,
     desc: "Left from the group",
     type: "group",
@@ -340,7 +340,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "lock ?(.*)",
+    pattern: "lock",
     fromMe: true,
     desc: "only allow admins to modify the group's settings.",
     type: "group",
@@ -352,7 +352,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "unlock ?(.*)",
+    pattern: "unlock",
     fromMe: true,
     desc: "allow everyone to modify the group's settings.",
     type: "group",
@@ -364,7 +364,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "gname ?(.*)",
+    pattern: "gname",
     fromMe: true,
     desc: "Change group subject",
     type: "group",
@@ -376,7 +376,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "gdesc ?(.*)",
+    pattern: "gdesc",
     fromMe: true,
     desc: "Change group description",
     type: "group",
@@ -388,7 +388,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "gpp ?(.*)",
+    pattern: "gpp",
     fromMe: true,
     desc: "Change group icon",
     type: "group",

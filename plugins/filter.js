@@ -16,7 +16,7 @@ const Lang = getString('filters');
 
 Bixby(
   {
-    pattern: "filter ?(.*)",
+    pattern: "filter",
     fromMe: true,
     desc: Lang.FILTER_DESC,
     usage: ".filter keyword:message",
@@ -53,7 +53,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "stop ?(.*)",
+    pattern: "stop",
     fromMe: true,
     desc: Lang.STOP_DESC,
     usage: '.stop "hello"',

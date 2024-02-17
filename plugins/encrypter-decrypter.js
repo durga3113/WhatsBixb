@@ -7,7 +7,7 @@ WhatsBixby - Ziyan
 const { Bixby, isPublic, eBinary, dBinary, octalToText, textToOctal } = require("../lib/");
 
 Bixby({
-          pattern: "ebinary ?(.*)",
+          pattern: "ebinary",
           fromMe: isPublic,
           desc: "encrypt text to binary",
           type: "encrypter"}, 
@@ -18,7 +18,7 @@ m.reply(await eBinary(match));
 });
 
 Bixby({
-          pattern: "dbinary ?(.*)",
+          pattern: "dbinary",
           fromMe: isPublic,
           desc: "decrypt binary to text",
           type: "encrypter"}, 
@@ -29,7 +29,7 @@ m.reply(await dBinary(match));
 });
 
 Bixby({
-          pattern: "ebase64 ?(.*)",
+          pattern: "ebase64",
           fromMe: isPublic,
           desc: "encrypt text to base64",
           type: "encrypter"}, 
@@ -41,7 +41,7 @@ m.reply(encodedString);
 });
 
 Bixby({
-          pattern: "dbase64 ?(.*)",
+          pattern: "dbase64",
           fromMe: isPublic,
           desc: "decrypt base64 to text",
           type: "encrypter"}, 
@@ -53,7 +53,7 @@ m.reply(decodedString);
 });
 
 Bixby({
-          pattern: "eascii ?(.*)",
+          pattern: "eascii",
           fromMe: isPublic,
           desc: "encrypt text to ascii",
           type: "encrypter"}, 
@@ -73,7 +73,7 @@ m.reply(asciiValues);
 });
 
 Bixby({
-          pattern: "dascii ?(.*)",
+          pattern: "dascii",
           fromMe: isPublic,
           desc: "decrypt ascii to text",
           type: "encrypter"}, 
@@ -85,7 +85,7 @@ m.reply(decodeascii);
 });
 
 Bixby({
-          pattern: "ehex ?(.*)",
+          pattern: "ehex",
           fromMe: isPublic,
           desc: "encrypt text to hexadecimal",
           type: "encrypter"}, 
@@ -99,7 +99,7 @@ m.reply(encodedHex);
 });
 
 Bixby({
-          pattern: "dhex ?(.*)",
+          pattern: "dhex",
           fromMe: isPublic,
           desc: "decrypt hexadecimal to text",
           type: "encrypter"}, 
@@ -113,7 +113,7 @@ m.reply(decodedString);
 });
 
 Bixby({
-          pattern: "eoctal ?(.*)",
+          pattern: "eoctal",
           fromMe: isPublic,
           desc: "convert text to octal",
           type: "encrypter"}, 
@@ -126,7 +126,7 @@ m.reply("Octal representation of '" + inputText + "': " + octalText);
 });
 
 Bixby({
-          pattern: "doctal ?(.*)",
+          pattern: "doctal",
           fromMe: isPublic,
           desc: "convert octal to text",
           type: "encrypter"}, 

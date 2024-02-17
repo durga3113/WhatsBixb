@@ -4,7 +4,7 @@ const { BASE_URL, API_KEY } = require("../config");
 
 Bixby(
   {
-	pattern: "ip ?(.*)",	
+	pattern: "ip",	
 	fromMe: isPublic,
 	desc: "get info of ip address",
         type: "information",
@@ -18,11 +18,10 @@ function WhatsBixby_0x11c278(_0x5c554d,_0x4b6f75,_0x3e9a7b,_0x1a760c,_0x383d2a){
 
 Bixby(
   {
-
-        pattern: "covid ?(.*)",	
-	fromMe: isPublic,
-	desc: "gives global covid info",
-        type: "information",
+   pattern: "covid",	
+ 	 fromMe: isPublic,
+	 desc: "gives global covid info",
+   type: "information",
   },
 async (message, match) => {
 
@@ -32,7 +31,7 @@ function WhatsBixby_0x1c3b1d(_0x31e690,_0x11a601,_0x5f1f70,_0x55e25e,_0x2b3f9b){
 
 Bixby({
 
-	pattern: "weather ?(.*)",	
+	pattern: "weather",	
 	fromMe: isPublic,
 	desc: "get weather information",
         type: "information",
@@ -45,7 +44,7 @@ let wdata = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=$
 });
 
 Bixby({
-    pattern: "pincode ?(.*)",
+    pattern: "pincode",
     fromMe: isPublic,
     desc: "get pincode information",
     type: "information",

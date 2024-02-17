@@ -96,7 +96,7 @@ Remaning    : ${secondsToDHMS(remaining)}`;
 
 Bixby(
   {
-    pattern: "setvar ",
+    pattern: "setvar",
     fromMe: true,
     type: "heroku",
     desc: "Set heroku env",
@@ -125,7 +125,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "delvar ",
+    pattern: "delvar",
     fromMe: true,
     type: "heroku",
     desc: "Delete Heroku env",
@@ -155,7 +155,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "getvar ",
+    pattern: "getvar",
     fromMe: true,
     type: "heroku",
     desc: "Show heroku env",
@@ -277,7 +277,7 @@ Bixby(
 
 
 Bixby(
-  { pattern: "setsudo ?(.*)", fromMe: true, desc: "set sudo", type: "user" },
+  { pattern: "setsudo", fromMe: true, desc: "set sudo", type: "user" },
   async (m, mm) => {
     var newSudo = (m.reply_message ? m.reply_message.jid : "" || mm).split(
       "@"
@@ -297,7 +297,7 @@ Bixby(
 );
 Bixby(
   {
-    pattern: "delsudo ?(.*)",
+    pattern: "delsudo",
     fromMe: true,
     desc: "delete sudo sudo",
     type: "user",
@@ -319,7 +319,7 @@ Bixby(
   }
 );
 Bixby(
-  { pattern: "getsudo ?(.*)", fromMe: true, desc: "shows sudo", type: "user" },
+  { pattern: "getsudo", fromMe: true, desc: "shows sudo", type: "user" },
   async (m) => {
     const vars = await heroku
       .get(baseURI + "/config-vars")

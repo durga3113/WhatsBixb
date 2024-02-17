@@ -8,7 +8,7 @@ const { Bixby, isPublic } = require("../lib");
 const { BASE_URL, API_KEY } = require("../config");
 const {bixbybuffer} = require('bixby-md');
 
-Bixby({pattern: "emojimix ?(.*)",fromMe: isPublic,desc: "make two emojis to one image",type: "maker"},
+Bixby({pattern: "emojimix",fromMe: isPublic,desc: "make two emojis to one image",type: "maker"},
 async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*enter any two emoji split with comma*");
