@@ -32,10 +32,10 @@ function WhatsBixby_0x1c3b1d(_0x31e690,_0x11a601,_0x5f1f70,_0x55e25e,_0x2b3f9b){
 
 Bixby({
 
-	pattern: 'weather ?(.*)',	
+	pattern: "weather ?(.*)",	
 	fromMe: isPublic,
-	desc: 'get weather information',
-        type: 'search',
+	desc: "get weather information",
+        type: "information",
       },
       async (message, match) => {
 match = match || message.reply_message.text;
