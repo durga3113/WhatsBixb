@@ -100,7 +100,7 @@ function WhatsBixby_0x412884(_0x38c74a,_0x383196,_0x4928c1,_0x2badbc,_0x2cc7a7){
 
 Bixby(
   {
-    pattern: "simi ?(.*)",
+    pattern: "simi",
     fromMe: isPublic,
     desc: "simi chatbot",
     type: "ai",
@@ -115,7 +115,7 @@ const response = await axios.get(`${BASE_URL}api/ai/simi?q=${match}&apikey=${API
 
 Bixby(
   {
-    pattern: "diffusion ?(.*)",
+    pattern: "diffusion",
     fromMe: isPublic,
     desc: "stable diffusion ai",
     type: "ai",
