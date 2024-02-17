@@ -4,8 +4,7 @@ you may not use this file except in compliance with the License.
 WhatsBixby - Ziyan
 */
 
-const { Bixby, isPublic } = require("../lib/");
-const { eBinary, dBinary, octalToText, textToOctal } = require("../lib/functions/encrypter");
+const { Bixby, isPublic, eBinary, dBinary, octalToText, textToOctal } = require("../lib/");
 
 Bixby({
           pattern: "ebinary ?(.*)",
