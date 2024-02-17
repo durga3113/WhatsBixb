@@ -5,8 +5,9 @@ WhatsBixby - Ziyan
 */
 
 const { Bixby, isPublic, isUrl, getJson } = require("../lib/");
-const { BASE_URL, API_KEY, CAPTION } = require("../config"); 
-const {bixbybuffer} = require('bixby-md');
+const { BASE_URL, API_KEY, CAPTION } = require("../config");
+const axios = require("axios");
+const {bixbybuffer} = require("bixby-md");
 
 Bixby(
   {
