@@ -8,7 +8,7 @@ const {Bixby, isPublic} = require('../lib/')
 const {bixbybuffer} = require('bixby-md');
 const {BASE_URL} = require("../config");
 
-Bixby({pattern: "flaming ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "flaming",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -22,7 +22,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "shadowsky ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "shadowsky",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -36,7 +36,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "metallic ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "metallic",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -50,7 +50,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "naruto ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "naruto",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -64,7 +64,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "pubg ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "pubg",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -78,7 +78,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "pokemon ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "pokemon",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -92,7 +92,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "blackpink ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "blackpink",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -106,7 +106,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "wood3d ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "wood3d",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -120,7 +120,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "neonglow ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "neonglow",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -134,7 +134,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "smokeeffect ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "smokeeffect",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -148,7 +148,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "harrypotter ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "harrypotter",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -162,7 +162,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "flower-typo ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "flower-typo",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -176,7 +176,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "coffecup ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "coffecup",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -190,7 +190,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "metalglow ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "metalglow",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -204,7 +204,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "woodblock ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "woodblock",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -218,7 +218,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "metalneon ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "metalneon",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -232,7 +232,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "burnpaper ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "burnpaper",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -246,7 +246,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "nightsky ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "nightsky",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -260,7 +260,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "cemetery-gate ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "cemetery-gate",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -274,7 +274,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "underocean ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "underocean",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -288,7 +288,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "partyneon ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "partyneon",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -302,7 +302,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "graffiti ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "graffiti",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
@@ -316,7 +316,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 })
 
-Bixby({pattern: "candy-text ?(.*)",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
+Bixby({pattern: "candy-text",fromMe: isPublic,dontAddCommandList: false,type: "Textpro",}, async(message, match) => {
 match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Enter The Name_*");
   
