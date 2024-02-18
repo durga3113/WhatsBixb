@@ -4,4 +4,111 @@ you may not use this file except in compliance with the License.
 WhatsBixby - Ziyan
 */
 
-var Ziyan_0x5a021a=Ziyan_0x3d3e;function Ziyan_0x3d3e(_0x350cc2,_0x47f92c){var _0x66e3e9=Ziyan_0x66e3();return Ziyan_0x3d3e=function(_0x3d3e6d,_0x57bbf8){_0x3d3e6d=_0x3d3e6d-0xe8;var _0x4869eb=_0x66e3e9[_0x3d3e6d];return _0x4869eb;},Ziyan_0x3d3e(_0x350cc2,_0x47f92c);}(function(_0x41e9b0,_0x200cac){var _0x1bbc72=Ziyan_0x3d3e,_0x169adf=_0x41e9b0();while(!![]){try{var _0x4df2b=parseInt(_0x1bbc72(0xf3))/0x1+-parseInt(_0x1bbc72(0xf2))/0x2+-parseInt(_0x1bbc72(0x104))/0x3*(parseInt(_0x1bbc72(0xf5))/0x4)+parseInt(_0x1bbc72(0x116))/0x5+-parseInt(_0x1bbc72(0xee))/0x6+parseInt(_0x1bbc72(0xf4))/0x7*(-parseInt(_0x1bbc72(0x108))/0x8)+parseInt(_0x1bbc72(0x10f))/0x9;if(_0x4df2b===_0x200cac)break;else _0x169adf['push'](_0x169adf['shift']());}catch(_0xdb3755){_0x169adf['push'](_0x169adf['shift']());}}}(Ziyan_0x66e3,0xcd6e6));const {Bixby,getUrl}=require(Ziyan_0x5a021a(0x117)),got=require(Ziyan_0x5a021a(0x102)),fs=require('fs'),{PluginDB,installPlugin}=require(Ziyan_0x5a021a(0x113));Bixby({'pattern':'install\x20?(.*)','fromMe':!![],'desc':'\x20Install\x20External\x20Plugins\x20','type':Ziyan_0x5a021a(0x114)},async(_0x4c0bf6,_0x54fb1f)=>{var _0x5ebb16=Ziyan_0x5a021a;if(!_0x54fb1f)return await _0x4c0bf6[_0x5ebb16(0xea)]('\x20*Send\x20a\x20plugin\x20url*');for(let _0x44fc34 of getUrl(_0x54fb1f)){try{var _0x424285=new URL(_0x44fc34);}catch{return await _0x4c0bf6[_0x5ebb16(0xea)](_0x5ebb16(0x112));}_0x424285[_0x5ebb16(0x118)]===_0x5ebb16(0xef)?(_0x424285['host']=_0x5ebb16(0xf9),_0x424285=_0x424285[_0x5ebb16(0xeb)]()+_0x5ebb16(0xe9)):_0x424285=_0x424285[_0x5ebb16(0xeb)]();var _0x277b99,_0x2a8f4a=await got(_0x424285);if(_0x2a8f4a[_0x5ebb16(0xf6)]==0xc8){var _0x11c491=_0x2a8f4a[_0x5ebb16(0xec)]['match'](/(?<=pattern:)(.*)(?=\?(.*))/g)[_0x5ebb16(0x101)](_0x44af24=>_0x44af24[_0x5ebb16(0xf1)]()[_0x5ebb16(0x103)](/"|'|`/,''));_0x277b99=_0x11c491[0x0]||_0x277b99[0x1]||'__'+Math[_0x5ebb16(0x109)]()[_0x5ebb16(0xeb)](0x24)[_0x5ebb16(0x100)](0x8),fs[_0x5ebb16(0xf0)](_0x5ebb16(0xfe)+_0x277b99+'.js',_0x2a8f4a['body']);try{require('./'+_0x277b99);}catch(_0x501567){return fs[_0x5ebb16(0xfc)]('/Bixby/plugins/'+_0x277b99+_0x5ebb16(0x11a)),await _0x4c0bf6[_0x5ebb16(0xea)](_0x5ebb16(0x10d)+_0x501567+_0x5ebb16(0x10b));}await installPlugin(_0x424285,_0x277b99),await _0x4c0bf6['sendMessage'](_0x5ebb16(0x107)+_0x11c491[_0x5ebb16(0xfd)](',')+'_');}}}),Bixby({'pattern':Ziyan_0x5a021a(0xe8),'fromMe':!![],'desc':Ziyan_0x5a021a(0x11b),'type':Ziyan_0x5a021a(0x114)},async(_0x49dedd,_0x2855df)=>{var _0x3aabf8=Ziyan_0x5a021a,_0x3df97e='',_0x36a6f2=await PluginDB[_0x3aabf8(0x10e)]();return _0x36a6f2[_0x3aabf8(0xf7)]<0x1?await _0x49dedd[_0x3aabf8(0xea)](_0x3aabf8(0xed)):(_0x36a6f2[_0x3aabf8(0x101)](_0x3261ea=>{var _0x4632a4=_0x3aabf8;_0x3df97e+=_0x4632a4(0x10b)+_0x3261ea[_0x4632a4(0x105)][_0x4632a4(0x110)]+_0x4632a4(0xff)+_0x3261ea[_0x4632a4(0x105)][_0x4632a4(0x111)]+'\x0a';}),await _0x49dedd[_0x3aabf8(0xea)](_0x3df97e));}),Bixby({'pattern':Ziyan_0x5a021a(0xf8),'fromMe':!![],'desc':Ziyan_0x5a021a(0x119),'type':Ziyan_0x5a021a(0x114)},async(_0x361669,_0x359c6a)=>{var _0x98ab48=Ziyan_0x5a021a;if(!_0x359c6a)return await _0x361669[_0x98ab48(0xea)](_0x98ab48(0xfb));var _0x44d20c=await PluginDB[_0x98ab48(0x10e)]({'where':{'name':_0x359c6a}});if(_0x44d20c[_0x98ab48(0xf7)]<0x1)return await _0x361669[_0x98ab48(0xea)](_0x98ab48(0x115));else await _0x44d20c[0x0][_0x98ab48(0xfa)](),delete require[_0x98ab48(0x10a)][require[_0x98ab48(0x106)]('./'+_0x359c6a+'.js')],fs[_0x98ab48(0xfc)](_0x98ab48(0xfe)+_0x359c6a+_0x98ab48(0x11a)),await _0x361669[_0x98ab48(0xea)]('\x20*plugin\x20'+_0x359c6a+_0x98ab48(0x10c));});function Ziyan_0x66e3(){var _0x5d3910=['toString','body','\x20*No\x20External\x20Plugins\x20Installed*\x20','4208250tbtmKo','gist.github.com','writeFileSync','trim','1277388AwJoim','761051uoocwC','7KInlIZ','344VkCzrk','statusCode','length','remove(?:\x20|$)(.*)','gist.githubusercontent.com','destroy','\x20*Need\x20a\x20Plugin\x20Name*\x20','unlinkSync','join','./plugins/','```:\x20','substring','map','got','replace','16551zKsXFX','dataValues','resolve','\x20*New\x20Plugin\x20Installed*\x20:\x20','9814832hXGFfQ','random','cache','```','\x20deleted*','\x20*Invalid\x20Plugin*\x20\x0a\x20```','findAll','22812786pRUxRH','name','url','\x20*Invalid\x20Url*\x20','../lib/db/plugins','user','\x20*Plugin\x20Not\x20Found*\x20','2935130tlckDi','../lib','host','\x20*Remove\x20External\x20Plugins*\x20','.js','\x20*Plugin\x20List*\x20','plugin','/raw','sendMessage'];Ziyan_0x66e3=function(){return _0x5d3910;};return Ziyan_0x66e3();}
+const { Bixby, getUrl } = require("../lib");
+const got = require("got");
+const fs = require("fs");
+const { PluginDB, installPlugin } = require("../lib/db/plugins");
+
+
+Bixby(
+  {
+    pattern: "install",
+    fromMe: true,
+    desc: "Install External Plugins",
+    type: "user"
+  },
+  async (message, match) => {
+    if (!match) return await message.sendMessage(" *Send a plugin url*");
+    for (let Url of getUrl(match)) {
+      try {
+        var url = new URL(Url);
+      } catch {
+        return await message.sendMessage(" *Invalid Url* ");
+      }
+
+      if (url.host === "gist.github.com") {
+        url.host = "gist.githubusercontent.com";
+        url = url.toString() + "/raw";
+      } else {
+        url = url.toString();
+      }
+      var plugin_name;
+      var response = await got(url);
+      if (response.statusCode == 200) {
+        var commands = response.body
+          .match(/(?<=pattern:)(.*)(?=\?(.*))/g)
+          .map((a) => a.trim().replace(/"|'|`/, ""));
+        plugin_name =
+          commands[0] ||
+          plugin_name[1] ||
+          "__" + Math.random().toString(36).substring(8);
+
+        fs.writeFileSync("./plugins/" + plugin_name + ".js", response.body);
+        try {
+          require("./" + plugin_name);
+        } catch (e) {
+          fs.unlinkSync("/Bixby/plugins/" + plugin_name + ".js");
+          return await message.sendMessage(" *Invalid Plugin* \n ```" + e + "```");
+        }
+
+        await installPlugin(url, plugin_name);
+
+        await message.sendMessage(
+          ` *New Plugin Installed* : ${commands.join(",")}_`
+        );
+      }
+    }
+  }
+);
+
+
+Bixby(
+  {
+    pattern: "plugin",
+    fromMe: true,
+    desc: " *plugin list* ",
+    type: "user",
+  },
+  async (message, match) => {
+    var mesaj = "";
+    var plugins = await PluginDB.findAll();
+    if (plugins.length < 1) {
+      return await message.sendMessage(" *No External Plugins Installed* ");
+    } else {
+      plugins.map((plugin) => {
+        mesaj +=
+          "```" +
+          plugin.dataValues.name +
+          "```: " +
+          plugin.dataValues.url +
+          "\n";
+      });
+      return await message.sendMessage(mesaj);
+    }
+  }
+);
+
+
+
+Bixby(
+  {
+    pattern: "remove",
+    fromMe: true,
+    desc: " *Remove External Plugins* ",
+    type: "user",
+  },
+  async (message, match) => {
+    if (!match) return await message.sendMessage(" *Need a Plugin Name* ");
+
+    var plugin = await PluginDB.findAll({ where: { name: match } });
+
+    if (plugin.length < 1) {
+      return await message.sendMessage(" *Plugin Not Found* ");
+    } else {
+      await plugin[0].destroy();
+      delete require.cache[require.resolve("./" + match + ".js")];
+      fs.unlinkSync("./plugins/" + match + ".js");
+      await message.sendMessage(` *plugin ${match} deleted*`);
+    }
+  }
+);
