@@ -9,7 +9,7 @@ const { BASE_URL, API_KEY } = require("../config");
 const axios = require("axios");
 
 Bixby({
-          pattern: "revtxt ?(.*)",
+          pattern: "revtxt",
           fromMe: isPublic,
           desc: "reverse the given text",
           type: "tools",
@@ -19,7 +19,7 @@ var _0x25cac8=_0x1f99;(function(_0x6032d7,_0x35c4a0){var _0x31ae6a=_0x1f99,_0xdf
 });
 
 Bixby({
-          pattern: "unrevtxt ?(.*)",
+          pattern: "unrevtxt",
           fromMe: isPublic,
           desc: "reverse the given text",
           type: "tools",
