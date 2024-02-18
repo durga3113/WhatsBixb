@@ -10,7 +10,7 @@ const { getAitts, sendTts } = require("../lib/tts");
 Bixby(
         {
          
-        pattern: "aitts?(.*)",
+        pattern: "aitts",
         fromMe: isPublic,
         desc: "converte text to ai voice",
         type: "ai",
