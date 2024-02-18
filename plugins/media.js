@@ -160,7 +160,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "video ?(.*)",
+    pattern: "video",
     fromMe: isPublic,
     desc: "Downloads video",
     type: "downloader",
