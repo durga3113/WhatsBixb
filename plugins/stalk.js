@@ -3,14 +3,14 @@ const axios = require('axios')
 const config = require("../config");
 const { BASE_URL, API_KEY } = require("../config");
 
-Bixby({
-
-	pattern: 'github ?(.*)',	
-	fromMe: isPublic,
-	desc: 'get user data from github',
-    type: 'search',
-
-}, async (message, match) => {
+Bixby(
+  {
+    pattern: "github",
+    fromMe: isPublic,
+    desc: "get user data from github",
+    type: "search",
+  },
+  async (message, match) => {
 match = match || message.reply_message.text;
  if (!match) return await message.reply("*_Give me user name*");
 const response = await axios.get(`${BASE_URL}api/other/github-stalk?username=${match}&apikey=${API_KEY}`);
@@ -46,10 +46,10 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 Bixby(
   {
-	pattern: "tiktok ?(.*)",	
-	fromMe: isPublic,
-	desc: "search tiktok user",
-        type: "search",
+    pattern: "tiktok",	
+    fromMe: isPublic,
+    desc: "search tiktok user",
+    type: "search",
   },
   async (message, match) => {
 match = match || message.reply_message.text;
