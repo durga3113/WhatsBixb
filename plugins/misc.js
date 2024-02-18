@@ -7,7 +7,7 @@ WhatsBixby - Ziyan
 const { Bixby, sleep, isPublic, XKCDComic } = require("../lib/");
 Bixby(
   {
-    pattern: "getqr ?(.*)",
+    pattern: "getqr",
     fromMe: isPublic,
     desc: "Get connection QR",
     type: "misc",
@@ -25,7 +25,7 @@ Bixby(
 
 Bixby(
   {
-    pattern: "request ?(.*)",
+    pattern: "request",
     fromMe: isPublic,
     desc: "request something to dev",
     type: "misc",
