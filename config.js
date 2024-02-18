@@ -1,4 +1,4 @@
-/* Copyright (C) 2023 DX-MODS.
+/* Copyright (C) 2024 DX-MODS.
 Licensed under the MIT License;
 you may not use this file except in compliance with the License.
 WhatsBixby - Ziyan
@@ -15,6 +15,7 @@ DATABASE_URL = process.env.DATABASE_URL || "./lib/database.db";
 module.exports = {
   BASE_URL : "https://bixby-api-b4eb9347a9ab.herokuapp.com/",
   API_KEY : "8coTqIYPs6", //login here and get api key https://bixby-api-b4eb9347a9ab.herokuapp.com/users/login
+  PORT: process.env.PORT || 8080,
   ANTILINK: toBool(process.env.ANTI_LINK) || false,
   LOGS: toBool(process.env.LOGS) || true,
   BGMBOT : toBool(process.env.BGMBOT || "false"),
