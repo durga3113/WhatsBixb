@@ -5,6 +5,56 @@ WhatsBixby - Ziyan
 */
 
 const { Bixby } = require("../lib");
+const { PausedChats } = require("../lib/db");
+
+
+Bixby(
+  {
+    pattern: "pause",
+    fromMe: true,
+    desc: "Pause the chat",
+    type: "user",
+  },
+  async (message) => {
+    const chatId = message.key.remoteJid;
+    try {
+      await PausedChats.savePausedChat(chatId);
+      message.reply("Chat paused successfully.");
+    } catch (error) {
+      console.error(error);
+      message.reply("Error pausing the chat.");
+    }
+  }
+);
+
+Bixby(
+  {
+    pattern: "resume",
+    fromMe: true,
+    desc: "Resume the paused chat",
+    type: "user",
+  },
+  async (message) => {
+    const chatId = message.key.remoteJid;
+
+    try {
+      const pausedChat = await PausedChats.PausedChats.findOne({
+        where: { chatId },
+      });
+
+      if (pausedChat) {
+        await pausedChat.destroy();
+        message.reply("Chat resumed successfully.");
+      } else {
+        message.reply("Chat is not paused.");
+      }
+    } catch (error) {
+      console.error(error);
+      message.reply("Error resuming the chat.");
+    }
+  }
+);
+
 
 Bixby(
   {
