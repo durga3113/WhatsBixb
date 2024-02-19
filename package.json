@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/DX-MODS/WhatsBixby",
   "dependencies": {
-    "@whiskeysockets/baileys": "git+https://github.com/Afx-Abu/baileys.ml",
+    "@whiskeysockets/baileys": "^6.6.0",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@xaviabot/fb-downloader": "^1.0.14",
     "@bochilteam/scraper": "3.0.0",
