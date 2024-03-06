@@ -13,7 +13,7 @@ const toBool = (x) => x == "true";
 
 DATABASE_URL = process.env.DATABASE_URL || "./lib/database.db";
 module.exports = {
-  BASE_URL : "https://bixby-api-b4eb9347a9ab.herokuapp.com/",
+  BASE_URL : "https://bixby-apis-de15cd0266bd.herokuapp.com/",
   API_KEY : "8coTqIYPs6", //login here and get api key https://bixby-api-b4eb9347a9ab.herokuapp.com/users/login
   PORT: process.env.PORT || 8080,
   ANTILINK: toBool(process.env.ANTI_LINK) || false,
