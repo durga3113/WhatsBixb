@@ -1,8 +1,13 @@
-const got = require("got");
+/*Copyright (C) 2024 DX-MODS.
+Licensed under the MIT License;
+you may not use this file except in compliance with the License.
+WhatsBixby - Ziyan
+*/
+
 const Heroku = require("heroku-client");
-const { Bixby, isPublic, secondsToDHMS } = require("../lib/");
+const { Bixby, isPublic } = require("../lib/");
 const tiny = require("../lib/functions");
-const { SUDO, HEROKU_APP_NAME, HEROKU_API_KEY } = require("../config");
+const { HEROKU_APP_NAME, HEROKU_API_KEY } = require("../config");
 const heroku = new Heroku({ token: HEROKU_API_KEY });
 const baseURI = "/apps/" + HEROKU_APP_NAME;
 const simpleGit = require("simple-git");
