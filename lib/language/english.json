@@ -203,9 +203,9 @@
             "UPDATER_DESC": "Checks for bot updates.",
             "UPDATE": "Already up to date",
             "UPDATE_START_DESC": "Updates bot.",
-            "UPDATING": "_Build started_",
+            "UPDATING": "Update Started",
             "INVALID_HEROKU": "Heroku app name or API key invalid!",
-            "UPDATED": "Build finished",
+            "UPDATED": "Update Finished",
             "AFTER_UPDATE": "Restarting"
         },
         "ping": {
