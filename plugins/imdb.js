@@ -1,5 +1,6 @@
 const { Bixby, getJson, isPublic} = require("../lib/");
-const axios = require('axios')
+const { BASE_URL, API_KEY } = require("../config");
+const axios = require("axios");
 Bixby({
 	pattern: "imdb",
 	fromMe: isPublic,
@@ -8,7 +9,7 @@ Bixby({
 }, async (message, match) => {
 match = match || message.reply_message.text;
  if (!match) return await message.reply("*Please type a movie or series name*");
-let fids = await axios.get(`http://www.omdbapi.com/?apikey=6fb6bfb4&t=${match}&plot=full`)
+let fids = await axios.get(`${BASE_URL}api/imdb?movie=${match}&apikey=${API_KEY}`)
 let imdbt = "";            
             imdbt += "_🎬Title      : " + fids.data.Title + "\n_";
             
