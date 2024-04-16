@@ -1,5 +1,12 @@
+/*Copyright (C) 2024 DX-MODS.
+Licensed under the MIT License;
+you may not use this file except in compliance with the License.
+WhatsBixby - Ziyan
+*/
+
 const { Bixby, isPublic, getBuffer } = require("../lib/");
 const { BASE_URL, API_KEY, CAPTION } = require("../config");
+const axios = require("axios");
 
 Bixby(
   {
