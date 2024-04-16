@@ -9,8 +9,8 @@
 <a href="https://github.com/DX-MODS/WhatsBixby/stargazers"><img src="https://img.shields.io/github/stars/DX-MODS/WhatsBixby?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars" /></a>
 <a href="https://github.com/DX-MODS/WhatsBixby/network/members"> <img src="https://img.shields.io/github/forks/DX-MODS/WhatsBixby?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
 <a href="https://github.com/DX-MODS/WhatsBixby/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License- MIT license -blueviolet?style=for-the-badge" alt="License" /> </a>
-<a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Written%20in-Javascripy-skyblue?style=for-the-badge&logo=javascript" alt="javascript" /> </a>
-<a href="https://www.npmjs.com/package/@whiskeysockets/baileys/v/6.6.0"> <img src="https://img.shields.io/pypi/v/pyrogram?color=white&label=baileys&logo=javascript&logoColor=blue&style=for-the-badge" /></a>
+<a href="[https://www.javascript.com]"> <img src="https://img.shields.io/badge/Written%20in-Javascripy-skyblue?style=for-the-badge&logo=javascript" alt="javascript" /> </a>
+<a href="https://www.npmjs.com/package/@whiskeysockets/baileys/v/6.6.0"> <img src="https://img.shields.io/npm/v/@whiskeysockets/baileys?color=white&label=baileys&logo=javascript&logoColor=blue&style=for-the-badge" /></a>
 <a href="https://github.com/DX-MODS/WhatsBixby"> <img src="https://img.shields.io/github/repo-size/DX-MODS/WhatsBixby?color=skyblue&logo=github&logoColor=blue&style=for-the-badge" /></a>
 <a href="https://github.com/DX-MODS/WhatsBixby/commits/DX-MODS"> <img src="https://img.shields.io/github/last-commit/DX-MODS/WhatsBixby?color=black&logo=github&logoColor=black&style=for-the-badge" /></a>
 </p>
