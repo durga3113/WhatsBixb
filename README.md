@@ -17,6 +17,10 @@
 </p>
 <br><br><br>
 
+### What is WhatsBixby?
+
+WhatsBixby is a WhatsApp bot that enables various features. It's built using JavaScript and Node.js framework, primarily leveraging the `@whiskeysockets/baileys` package.
+
 ### Scan Qr
 
 [![QR CODE](https://img.shields.io/badge/Scan_qr_code-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black)](https://whatsbixbyqr.dxmods.xyz)
