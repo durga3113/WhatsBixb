@@ -13,7 +13,7 @@
 <a href="https://nodejs.org/en"> <img src="https://img.shields.io/badge/FRAMEWORK-nodejs-green?style=for-the-badge&logo=nodejs" alt="javascript" /> </a>
 <a href="https://www.npmjs.com/package/@whiskeysockets/baileys/v/6.6.0"> <img src="https://img.shields.io/npm/v/@whiskeysockets/baileys?color=white&label=baileys&logo=javascript&logoColor=blue&style=for-the-badge" /></a>
 <a href="https://github.com/DX-MODS/WhatsBixby"> <img src="https://img.shields.io/github/repo-size/DX-MODS/WhatsBixby?color=skyblue&logo=github&logoColor=blue&style=for-the-badge" /></a>
-<a href="https://github.com/DX-MODS/WhatsBixby/commits/DX-MODS"> <img src="https://img.shields.io/github/last-commit/DX-MODS/WhatsBixby?color=black&logo=github&logoColor=black&style=for-the-badge&branch=master" /></a>
+<a href="https://github.com/DX-MODS/WhatsBixby/commits/master"> <img src="https://img.shields.io/github/last-commit/DX-MODS/WhatsBixby?color=black&logo=github&logoColor=black&style=for-the-badge&branch=master" /></a>
 </p>
 <br><br><br>
 
