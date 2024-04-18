@@ -1,8 +1,23 @@
 const { Bixby, isPublic } = require("../lib/");
 const tiny = require("../lib/functions");
 const { BASE_URL, API_KEY } = require("../config");
+const { obfuscateCode } = require("bixby-md");
 const axios = require("axios");
 
+Bixby(
+    {
+        pattern: "obf",
+        fromMe: isPublic,
+        desc: "obfuscate code",
+        type: "tools",
+    },
+    async (m, match) => {
+        match = match || m.reply_message.text;
+        if (!match) return await m.reply("Give me some code to obfuscate");
+        const obfuscatedCode = obfuscateCode(match);
+        await m.reply(obfuscatedCode);
+    }
+);
 Bixby(
   {
     pattern: "rvtxt",
