@@ -1,8 +1,9 @@
 const { Bixby, isPublic } = require("../lib/");
 const tiny = require("../lib/functions");
 const { BASE_URL, API_KEY } = require("../config");
-const { obfuscateCode } = require("bixby-md");
+const { obfuscateCode, beautifyjs } = require("bixby-md");
 const axios = require("axios");
+const options = { indent_size: 2, space_in_empty_paren: true };
 
 Bixby(
     {
@@ -18,6 +19,22 @@ Bixby(
         await m.reply(obfuscatedCode);
     }
 );
+
+Bixby(
+    {
+        pattern: "beautifyjs",
+        fromMe: isPublic,
+        desc: "beautify javascript code ",
+        type: "tools",
+    },
+    async (m, match) => {
+        match = match || m.reply_message.text;
+        if (!match) return await m.reply("Give me some code to obfuscate");
+        const beautifiedjs = beautifyjs(match, options);
+        await m.reply(obfuscatedCode);
+    }
+);
+
 Bixby(
   {
     pattern: "rvtxt",
