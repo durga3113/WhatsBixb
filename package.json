@@ -26,6 +26,7 @@
     "@adiwajshing/keyed-db": "^0.2.4",
     "awesome-phonenumber": "^3.4.0",
     "@xaviabot/fb-downloader": "^1.0.14",
+    "javascript-obfuscator": "2.8.0",
     "google-tts-api": "^2.0.2",
     "q": "^1.5.1",
     "aes256": "^1.1.0",
