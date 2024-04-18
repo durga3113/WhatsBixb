@@ -21,7 +21,8 @@
     "url": "https://github.com/DX-MODS/WhatsBixby/issues"
   },
   "homepage": "https://github.com/DX-MODS/WhatsBixby#readme",
-  "dependencies": {  
+  "dependencies": {
+    "bixby-md": "2.4.0",
     "@whiskeysockets/baileys": "git+https://github.com/DX-MODS/baileys",
     "@adiwajshing/keyed-db": "^0.2.4",
     "awesome-phonenumber": "^3.4.0",
