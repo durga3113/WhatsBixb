@@ -1,5 +1,23 @@
-const { Bixby, sleep, isPublic } = require("../lib/");
-const BASE_URL = require("../config");
+const { Bixby, sleep, isPublic, getBuffer } = require("../lib/");
+const { BASE_URL, API_KEY } = require("../config");
+
+Bixby(
+  {
+    pattern: "caredits",
+    fromMe: isPublic,
+    desc: "download car edits",
+    type: "downloader",
+  },
+  async (message, match) => {
+  var apiurl = `${BASE_URL}api/downloader/caredits?apikey=${API_KEY}`;	    
+  var video = await getBuffer(apiurl);
+  const videoMessage = {
+  video: video,
+  caption: CAPTION,
+  }
+  message.client.sendMessage(message.jid, videoMessage) 
+  });
+
 Bixby(
   {
     pattern: "getqr",
