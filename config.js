@@ -13,7 +13,7 @@ module.exports = {
   PORT: process.env.PORT || 8000,
   BASE_URL : "https://bixby-api.dxmods.xyz/",
   API_KEY : "8coTqIYPs6", //login here and get api key https://bixby-api.dxmods.xyz/users/login
-  SESSION_VALIDATOR : "https://whatsbixbyqr.dxmods.xyz/",
+  SESSION_VALIDATOR : "https://whatsbixby-qr.dxmods.xyz/",
   VERSION: require('./package.json').version,
   LOGS: toBool(process.env.LOGS) || true,
   CALL_BLOCK: toBool(process.env.CALL_BLOCK),
