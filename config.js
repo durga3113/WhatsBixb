@@ -32,7 +32,7 @@ module.exports = {
   PACKNAME: process.env.PACKNAME || "𝙒𝞖𝞓𝙏𝙎",
   AUTHOR: process.env.AUTHOR || "𝞑𝞘𝞦𝞑𝙔",
   DATABASE: DATABASE_URL === './lib/db/database.db' ? new Sequelize({ dialect: 'sqlite', storage: DATABASE_URL, logging: false }) : new Sequelize(DATABASE_URL, {dialect: 'postgres', ssl: true, protocol: 'postgres', dialectOptions: { native: true, ssl: { require: true, rejectUnauthorized: false },}, logging: false }),
-  SUDO: process.env.SUDO || "919446072492",
+  SUDO: process.env.SUDO || " ",
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || " ",
   HEROKU_API_KEY: process.env.HEROKU_API_KEY || " ",
   OWNER_NAME: process.env.OWNER_NAME || "𝙕𝞘𝙔𝞓𝞜",
