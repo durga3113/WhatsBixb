@@ -4,56 +4,108 @@ you may not use this file except in compliance with the License.
 WhatsBixby - Ziyan
 */
 
-const fs = require("fs").promises;
-const fsx = require("fs");
-const path = require("path");
-const config = require("./config");
-const connect = require("./lib/connection");
-const { getandRequirePlugins } = require("./lib/db/plugins");
-const { GenSession } = require("./lib/functions");
-global.__basedir = __dirname;
+const { Bixby, commands } = require("./events");
+let config = require("../config");
+const axios = require("axios");
+const cheerio = require("cheerio");
+const OpenAI = require("openai");
+const openai_api = "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";
+const openai = new OpenAI({ apiKey: openai_api });
 
-async function auth() {
-  try {
-    if (!fsx.existsSync("./lib/auth_info_baileys/creds.json")) {
-      await GenSession();
-    }
-    return initialize();
-  } catch (error) {
-    console.error("AuthFile Generation Error:", error);
-    return process.exit(1);
+const pm2 = require("pm2");
+
+const {
+  getBuffer,
+  decodeJid,
+  parseJid,
+  parsedJid,
+  getJson,
+  isIgUrl,
+  isUrl,
+  getUrl,
+  qrcode,
+  secondsToDHMS,
+  igdl,
+  formatBytes,
+  sleep,
+  clockString,
+  runtime,
+  AddMp3Meta,
+  Mp3Cutter,
+  Bitly,
+  isNumber,
+  getRandom,
+  findMusic,
+  WriteSession,
+  GenSession,
+  toAudio,
+  isAdmin,
+  fromMe,
+  MimeTypes,
+} = require("./functions");
+const { serialize, downloadMedia } = require("./serialize");
+const Greetings = require("./greetings");;
+async function getMemoryUsage() {
+  const memoryUsage = process.memoryUsage();
+  const usedMemory = memoryUsage.heapUsed;
+  const totalMemory = memoryUsage.heapTotal;
+  const percentageUsed = ((usedMemory / totalMemory) * 100).toFixed(2);
+
+  const formattedUsedMemory = formatBytes(usedMemory);
+  const formattedTotalMemory = formatBytes(totalMemory);
+
+  let stackInfo = '';
+  if (memoryUsage.stackTotal !== undefined && memoryUsage.stackUsed !== undefined) {
+    const formattedStackTotal = formatBytes(memoryUsage.stackTotal);
+    const formattedStackUsed = formatBytes(memoryUsage.stackUsed);
+    stackInfo = `
+  Stack Total: ${formattedStackTotal}
+  Stack Used: ${formattedStackUsed}`;
   }
-}
 
-async function readAndRequireFiles(directory) {
-  try {
-    const files = await fs.readdir(directory);
-    return Promise.all(
-      files
-        .filter((file) => path.extname(file).toLowerCase() === ".js")
-        .map((file) => require(path.join(directory, file)))
-    );
-  } catch (error) {
-    console.error("Error reading and requiring files:", error);
-    throw error; // Rethrow the error to propagate it
-  }
-}
+  const memoryUsageText = `Memory Usage:
+Total Memory: ${formattedTotalMemory}
+Used Memory: ${formattedUsedMemory} (${percentageUsed}%)
+External: ${formatBytes(memoryUsage.external)}
+Array Buffers: ${formatBytes(memoryUsage.arrayBuffers)}
+Allocated: ${formatBytes(totalMemory - usedMemory)}${stackInfo}`;
 
-async function initialize() {
-  console.log("============> Aurora-MD [Alien-Alfa] <============");
-  try {
-    await readAndRequireFiles(path.join(__dirname, "/lib/db/"));
-    console.log("Syncing Database");
-    await config.DATABASE.sync();
-    console.log("⬇  Installing Plugins...");
-    await readAndRequireFiles(path.join(__dirname, "/plugins/"));
-    await getandRequirePlugins();
-    console.log("✅ Plugins Installed!");
-    await connect();
-  } catch (error) {
-    console.error("Initialization error:", error);
-    process.exit(1); // Exit with error status
-  }
+  return memoryUsageText;
+  
 }
-
-auth();
+module.exports = {
+  toAudio,
+  isPublic: config.WORK_TYPE.toLowerCase() === "public",
+  Greetings,
+  isAdmin,
+  serialize,
+  downloadMedia,
+  Function: Bixby,
+  Bixby,
+  commands,
+  getBuffer,
+  WriteSession,
+  decodeJid,
+  parseJid,
+  parsedJid,
+  getJson,
+  isIgUrl,
+  isUrl,
+  getUrl,
+  qrcode,
+  secondsToDHMS,
+  formatBytes,
+  igdl, 
+  sleep,
+  clockString,
+  runtime,
+  AddMp3Meta,
+  Mp3Cutter,
+  Bitly,
+  isNumber,
+  getRandom,
+  findMusic,
+  fromMe,
+  MimeTypes,
+  getMemoryUsage,
+};
