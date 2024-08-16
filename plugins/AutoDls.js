@@ -8,7 +8,7 @@ const {
     toAudio,
     getJson,
     validateQuality,
-  } = require("../lib");
+  } = require("../lib/");
   const dl = require("@xaviabot/fb-downloader");
   const fetch = require("node-fetch");
   const { yta, ytv, ytsdl } = require("../lib/functions");
