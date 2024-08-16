@@ -165,7 +165,7 @@ const isYtUrl = (text) => {
     }
   );
   
-  Bixb({
+  Bixby({
       pattern: "ytv",
       fromMe: isPrivate,
       desc: "Download audio from youtube",
