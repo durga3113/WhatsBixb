@@ -4,7 +4,7 @@ const path = require("path");
 const config = require("./config");
 const connect = require("./lib/connection");
 const { getandRequirePlugins } = require("./lib/db/plugins");
-const { UpdateLocal, WriteSession } = require("./lib");
+const { UpdateLocal, GenSession } = require("./lib");
 
 global.__basedir = __dirname;
 
