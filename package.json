@@ -14,6 +14,7 @@
     "@hapi/boom": "^10.0.1",
     "@neeraj-x0/nodetoolkit": "^1.0.3",
     "@whiskeysockets/baileys": "github:WhiskeySockets/Baileys",
+    "aes256": "^1.1.0",
     "acrcloud": "^1.4.0",
     "axios": "^1.4.0",
     "bitly": "^4.1.1",
