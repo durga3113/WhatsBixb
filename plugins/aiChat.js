@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { Bixby, isPrivate } = require("../lib");
 const gemini = require("../lib/functions");
-const config = require("../../config"); 
+const config = require("../config"); 
 const { AiChat  } = require("../lib/db");
 Bixby(
   {
