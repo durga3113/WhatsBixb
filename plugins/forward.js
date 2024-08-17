@@ -1,4 +1,4 @@
-const { Bixby, parsedJid } = require("../../lib/");
+const { Bixby, parsedJid } = require("../lib/");
 
 Bixby(
   {
