@@ -1,4 +1,4 @@
-const { Bixby , sleep } = require("../lib/");
+const { Bixby, sleep } = require("../lib");
 const axios = require("axios");
 const fs = require("fs");
 const { PluginDB, installPlugin } = require("../lib/db").Plugins;
