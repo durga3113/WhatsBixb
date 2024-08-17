@@ -1,5 +1,5 @@
 const plugins = require("../lib/events");
-const { command, isPrivate, clockString, pm2Uptime} = require("../lib");
+const { Bixby, isPrivate, clockString, pm2Uptime} = require("../lib");
 const { fancy10, typewriter, tiny } = require("../lib/functions")
 const config = require("../config");
 
