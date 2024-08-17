@@ -1,6 +1,6 @@
 const { fromBuffer } = require("file-type");
 const { Bixby, isPrivate } = require("../lib/");
-const { ffmpeg, parseTimeToSeconds } = require("../../lib/functions");
+const { ffmpeg, parseTimeToSeconds } = require("../lib/functions");
 
 Bixby(
   {
