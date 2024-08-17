@@ -10,7 +10,7 @@ global.__basedir = __dirname;
 
 async function auth() {
   try {
-    if (!fsx.existsSync("./lib/session/creds.json")) {
+    if (!fsx.existsSync("./session/creds.json")) {
       await WriteSession();
     }
     return initialize();
