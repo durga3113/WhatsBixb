@@ -88,7 +88,7 @@ Description: ${i.desc}\`\`\``;
 ┃✧│ Available RAM: ${allFreeMem.toFixed(0)}GB / ${avbMem.toFixed(2)}GB
 ┃✧│ Commands: ${plugins.commands.length}
 ┃✧│ Uptime: ${await formatTime(process.uptime().toFixed(0))}
-┃✧│ Version: ${require("../../package.json").version}
+┃✧│ Version: ${require("../package.json").version}
 ┃✧│
 ┃✧│
 ┃✧│  ▎▍▌▌▉▏▎▌▉▐▏▌▎
