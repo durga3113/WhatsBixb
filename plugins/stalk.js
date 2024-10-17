@@ -5,15 +5,15 @@ WhatsBixby - Ziyan
 */
 
 
-const { Bixby, isPublic } = require("../lib");
+const { Bixby, isPrivate } = require("../lib");
 const tiny = require("../lib/functions/fancy");
 const axios = require("axios");
 const { BASE_URL, API_KEY } = require("../config");
 
 Bixby(
   {
-    pattern: "igsearch",
-    fromMe: isPublic,
+    pattern: "ig",
+    fromMe: isPrivate,
     desc: "insta profile search",
     type: "search",
   },
@@ -37,7 +37,7 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 Bixby(
   {
    pattern: "github",	
-   fromMe: isPublic,
+   fromMe: isPrivate,
    desc: "get user data from github",
    type: "search",
   },
