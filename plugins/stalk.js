@@ -20,7 +20,7 @@ Bixby(
 async (message, match) => {
 match = match || message.reply_message.text;
 if (!match) return await message.reply("*_Give me user name*");
-const response = await axios.get(`${BASE_URL}api/ig/stalk?username=${match}&apikey=${API_KEY}`);
+const response = await axios.get(`${BASE_URL}stalk/ig?id=${match}&apikey=${API_KEY}`);
 
 const { full_name, username, profile_pic_url, posts, following, followers, biography, is_private, is_verified } = response.data.result.user_info;
 const Text = `\`\`\`\nusername : ${username}\nname : ${full_name}\nposts : ${posts}\nfollowers : ${followers}\nfollowing : ${following}\nprivate account: ${is_private}\nverified account: ${is_verified}\nbio : ${biography}\n\`\`\``;
@@ -44,7 +44,7 @@ Bixby(
 async (message, match) => {
 match = match || message.reply_message.text;
 if (!match) return await message.reply("*_Give me user name*");
-const response = await axios.get(`${BASE_URL}api/other/github-stalk?username=${match}&apikey=${API_KEY}`);
+const response = await axios.get(`${BASE_URL}stalk/github?id=${match}&apikey=${API_KEY}`);
 const { login, name, bio, followers, public_repos, following, blog, avatar_url } = response.data.result;
 const gittext = `
 * USER GITHUB INFORMATION *
