@@ -48,6 +48,9 @@ Bixby(
     try {
       const response = await axios.get(`${BASE_URL}stalk/github?id=${match}&apikey=${API_KEY}`);
 
+      // Log the entire response to debug
+      console.log(response.data);
+
       // Check if response.data.result exists before destructuring
       if (!response.data.result) {
         return await message.reply("*_User data not found. Please check the username and try again._*");
@@ -71,3 +74,4 @@ Bixby(
     }
   }
 );
+
