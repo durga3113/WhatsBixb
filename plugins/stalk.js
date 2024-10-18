@@ -6,7 +6,6 @@ WhatsBixby - Ziyan
 
 
 const { Bixby, isPrivate } = require("../lib");
-const tiny = require("../lib/functions/fancy");
 const axios = require("axios");
 const { BASE_URL, API_KEY } = require("../config");
 
@@ -65,7 +64,7 @@ Bixby(
         message.jid,
         {
           image: { url: avatar_url },
-          caption: tiny(gittext),
+          caption: gittext,
         },
         { quoted: message }
       );
