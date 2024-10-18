@@ -42,10 +42,12 @@ Bixby(
   },
   async (message, match) => {
     match = match || message.reply_message.text;
-    if (!match) return await message.reply("*_Give me user name_*");
+    const trim = match.trim();  // Create a new const to trim spaces from match
+
+    if (!trim) return await message.reply("*_Give me user name_*");
 
     try {
-      const apiUrl = `${BASE_URL}stalk/github?id=${match}&apikey=${API_KEY}`;
+      const apiUrl = `${BASE_URL}stalk/github?id=${trim}&apikey=${API_KEY}`;
       
       // Log the entire URL for debugging
       console.log("Request URL:", apiUrl);
@@ -76,3 +78,4 @@ Bixby(
     }
   }
 );
+
