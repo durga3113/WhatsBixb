@@ -36,32 +36,38 @@ message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
 
 Bixby(
   {
-   pattern: "github",	
-   fromMe: isPrivate,
-   desc: "get user data from github",
-   type: "search",
+    pattern: "github",
+    fromMe: isPrivate,
+    desc: "get user data from github",
+    type: "search",
   },
-async (message, match) => {
-match = match || message.reply_message.text;
-if (!match) return await message.reply("*_Give me user name*");
-const response = await axios.get(`${BASE_URL}stalk/github?id=${match}&apikey=${API_KEY}`);
-const { login, name, bio, followers, public_repos, following, blog, avatar_url } = response.data.result;
-const gittext = `
-* USER GITHUB INFORMATION *
-_👤 Username:_ *${login}*
-_👤 Name:_ *${name || 'N/A'}*
-_👩‍💻 Bio:_ *${bio || 'N/A'}*
-_🐌 Followers:_ *${followers}*
-_🌷 Public Repos:_ *${public_repos}*
-_👥 Following:_ *${following}*
-_🌐 Website:_ ${blog || 'N/A'}*
-`;
-await message.client.sendMessage(message.jid, {
-image: {
-url: avatar_url,
-},
-caption: tiny(gittext),
-}, {
-quoted: message,
-});
-});
+  async (message, match) => {
+    match = match || message.reply_message.text;
+    if (!match) return await message.reply("*_Give me user name_*");
+
+    try {
+      const response = await axios.get(`${BASE_URL}stalk/github?id=${match}&apikey=${API_KEY}`);
+
+      // Check if response.data.result exists before destructuring
+      if (!response.data.result) {
+        return await message.reply("*_User data not found. Please check the username and try again._*");
+      }
+
+      const { login, name, bio, followers, public_repos, following, blog, avatar_url } = response.data.result;
+
+      const gittext = `* USER GITHUB INFORMATION *\n👤 Username: *${login}*\n👤 Name: *${name || 'N/A'}*\n👩‍💻 Bio: *${bio || 'N/A'}*\n🐌 Followers: *${followers}*\n🌷 Public Repos: *${public_repos}*\n👥 Following: *${following}*\n🌐 Website: ${blog || 'N/A'}`;
+
+      await message.client.sendMessage(
+        message.jid,
+        {
+          image: { url: avatar_url },
+          caption: tiny(gittext),
+        },
+        { quoted: message }
+      );
+    } catch (error) {
+      console.error(error);
+      await message.reply("*_An error occurred while fetching user data. Please try again later._*");
+    }
+  }
+);
