@@ -41,12 +41,17 @@ Bixby(
     type: "search",
   },
   async (message, match) => {
-    match = match || message.reply_message.text
+    match = match || message.reply_message.text;
     if (!match) return await message.reply("*_Give me user name_*");
 
     try {
-      const response = await axios.get(`${BASE_URL}stalk/github?id=${match}&apikey=${API_KEY}`);
-
+      const apiUrl = `${BASE_URL}stalk/github?id=${match}&apikey=${API_KEY}`;
+      
+      // Log the entire URL for debugging
+      console.log("Request URL:", apiUrl);
+      
+      const response = await axios.get(apiUrl);
+      
       // Log the entire response to debug
       console.log(response.data);
 
@@ -56,9 +61,7 @@ Bixby(
       }
 
       const { login, name, bio, followers, public_repos, following, blog, avatar_url } = response.data.result;
-
       const gittext = `* USER GITHUB INFORMATION *\n👤 Username: *${login}*\n👤 Name: *${name || 'N/A'}*\n👩‍💻 Bio: *${bio || 'N/A'}*\n🐌 Followers: *${followers}*\n🌷 Public Repos: *${public_repos}*\n👥 Following: *${following}*\n🌐 Website: ${blog || 'N/A'}`;
-
       await message.client.sendMessage(
         message.jid,
         {
@@ -73,4 +76,3 @@ Bixby(
     }
   }
 );
-
