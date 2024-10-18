@@ -43,10 +43,11 @@ Bixby(
   },
   async (message, match) => {
     match = match || message.reply_message.text;
-    if (!match) return await message.reply("*_Give me user name_*");
+    let args = match.split(" ");
+    if (!args) return await message.reply("*_Give me user name_*");
 
     try {
-      const response = await axios.get(`${BASE_URL}stalk/github?id=${match}&apikey=${API_KEY}`);
+      const response = await axios.get(`${BASE_URL}stalk/github?id=${args}&apikey=${API_KEY}`);
 
       // Log the entire response to debug
       console.log(response.data);
