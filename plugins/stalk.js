@@ -17,7 +17,7 @@ Bixby(
     type: "search",
   },
 async (message, match) => {
-match = match || message.reply_message.text;
+match = match || message.reply_message.text
 if (!match) return await message.reply("*_Give me user name*");
 const response = await axios.get(`${BASE_URL}stalk/ig?id=${match}&apikey=${API_KEY}`);
 
@@ -41,12 +41,11 @@ Bixby(
     type: "search",
   },
   async (message, match) => {
-    match = match || message.reply_message.text;
-    let args = match.split(" ");
-    if (!args) return await message.reply("*_Give me user name_*");
+    match = match || message.reply_message.text
+    if (!match) return await message.reply("*_Give me user name_*");
 
     try {
-      const response = await axios.get(`${BASE_URL}stalk/github?id=${args}&apikey=${API_KEY}`);
+      const response = await axios.get(`${BASE_URL}stalk/github?id=${match}&apikey=${API_KEY}`);
 
       // Log the entire response to debug
       console.log(response.data);
