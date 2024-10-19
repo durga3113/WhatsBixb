@@ -18,12 +18,13 @@ Bixby(
   },
 async (message, match) => {
 match = match || message.reply_message.text
-if (!match) return await message.reply("*_Give me user name*");
-const response = await axios.get(`${BASE_URL}stalk/ig?id=${match}&apikey=${API_KEY}`);
+const args = match.trim();
+if (!args) return await message.reply("*_Give me user name*");
+const response = await axios.get(`${BASE_URL}stalk/ig?id=${args}&apikey=${API_KEY}`);
 
-const { full_name, username, profile_pic_url, posts, following, followers, biography, is_private, is_verified } = response.data.result.user_info;
-const Text = `\`\`\`\nusername : ${username}\nname : ${full_name}\nposts : ${posts}\nfollowers : ${followers}\nfollowing : ${following}\nprivate account: ${is_private}\nverified account: ${is_verified}\nbio : ${biography}\n\`\`\``;
-        
+const { full_name, username, post_count, following, followers, biography, is_private, is_verified } = response.data.result;
+const { profile_pic_url } = response.data.result.hd_profile_pic_url_info.url;
+const Text = `\`\`\`\nusername : ${username}\nname : ${fullname}\nposts : ${post_count}\nfollowers : ${followers}\nfollowing : ${following}\nprivate account: ${is_private}\nverified account: ${is_verified}\nbio : ${biography}\n\`\`\``;        
 const buttonMessage = {
     image: {url: profile_pic_url},
     caption: Text,
@@ -42,20 +43,14 @@ Bixby(
   },
   async (message, match) => {
     match = match || message.reply_message.text;
-    const trim = match.trim();  // Create a new const to trim spaces from match
+    const args = match.trim();
 
-    if (!trim) return await message.reply("*_Give me user name_*");
+    if (!args) return await message.reply("*_Give me user name_*");
 
     try {
-      const apiUrl = `${BASE_URL}stalk/github?id=${trim}&apikey=${API_KEY}`;
-      
-      // Log the entire URL for debugging
-      console.log("Request URL:", apiUrl);
+      const apiUrl = `${BASE_URL}stalk/github?id=${args}&apikey=${API_KEY}`;
       
       const response = await axios.get(apiUrl);
-      
-      // Log the entire response to debug
-      console.log(response.data);
 
       // Check if response.data.result exists before destructuring
       if (!response.data.result) {
