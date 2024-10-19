@@ -22,7 +22,7 @@ const args = match.trim();
 if (!args) return await message.reply("*_Give me user name*");
 const response = await axios.get(`${BASE_URL}stalk/ig?id=${args}&apikey=${API_KEY}`);
 
-const { full_name, username, post_count, following, followers, biography, is_private, is_verified } = response.data.result;
+const { fullname, username, post_count, following, followers, biography, is_private, is_verified } = response.data.result;
 const { profile_pic_url } = response.data.result.hd_profile_pic_url_info.url;
 const Text = `\`\`\`\nusername : ${username}\nname : ${fullname}\nposts : ${post_count}\nfollowers : ${followers}\nfollowing : ${following}\nprivate account: ${is_private}\nverified account: ${is_verified}\nbio : ${biography}\n\`\`\``;        
 const buttonMessage = {
