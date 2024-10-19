@@ -16,23 +16,34 @@ Bixby(
     desc: "insta profile search",
     type: "search",
   },
-async (message, match) => {
-match = match || message.reply_message.text
-const args = match.trim();
-if (!args) return await message.reply("*_Give me user name*");
-const response = await axios.get(`${BASE_URL}stalk/ig?id=${args}&apikey=${API_KEY}`);
+  async (message, match) => {
+    match = match || message.reply_message.text;
+    const args = match ? match.trim() : '';
+    if (!args) return await message.reply("*_Give me user name_*");
 
-const { fullname, username, post_count, following, followers, biography, is_private, is_verified } = response.data.result;
-const { profile_pic_url } = response.data.result.hd_profile_pic_url_info.url;
-const Text = `\`\`\`\nusername : ${username}\nname : ${fullname}\nposts : ${post_count}\nfollowers : ${followers}\nfollowing : ${following}\nprivate account: ${is_private}\nverified account: ${is_verified}\nbio : ${biography}\n\`\`\``;        
-const buttonMessage = {
-    image: {url: profile_pic_url},
-    caption: Text,
-}
+    try {
+      const response = await axios.get(`${BASE_URL}stalk/ig?id=${args}&apikey=${API_KEY}`);
+      const { fullname = 'N/A', username, post_count = 0, following = 0, followers = 0, biography = 'N/A', is_private, is_verified } = response.data.result || {};
+      const profile_pic_url = response.data.result?.hd_profile_pic_url_info?.url || '';
 
-message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+      if (!username) {
+        return await message.reply("*_User not found. Please check the username and try again._*");
+      }
 
-});
+      const Text = `\`\`\`\nusername : ${username}\nname : ${fullname}\nposts : ${post_count}\nfollowers : ${followers}\nfollowing : ${following}\nprivate account: ${is_private}\nverified account: ${is_verified}\nbio : ${biography}\n\`\`\``;
+
+      const buttonMessage = {
+        image: { url: profile_pic_url },
+        caption: Text,
+      };
+      await message.client.sendMessage(message.jid, buttonMessage, { quoted: message });
+    } catch (error) {
+      console.error(error);
+      await message.reply("*_An error occurred while fetching the Instagram profile. Please try again later._*");
+    }
+  }
+);
+
 
 Bixby(
   {
