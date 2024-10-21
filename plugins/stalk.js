@@ -44,6 +44,41 @@ Bixby(
   }
 );
 
+Bixby(
+  {
+    pattern: "tiktok",
+    fromMe: isPrivate,
+    desc: "tiktok profile search",
+    type: "search",
+  },
+  async (message, match) => {
+    match = match || message.reply_message.text;
+    const args = match ? match.trim() : '';
+    if (!args) return await message.reply("*_Give me user name_*");
+
+    try {
+      const response = await axios.get(`${BASE_URL}stalk/tiktok?id=${args}&apikey=${API_KEY}`);
+      const { uniqueId, nickname, avatar, verified, bioLink, privateAccount, followers, following, hearts, videos } = response.data.result.data;
+      const profile_pic_url = response.data.result?.hd_profile_pic_url_info?.url || '';
+
+      if (!username) {
+        return await message.reply("*_User not found. Please check the username and try again._*");
+      }
+
+      const Text = `\`\`\`\nusername : ${uniqueId}\nname : ${nickname}\nfollowers : ${followers}\nfollowing : ${followers}\nfollowing : ${following}\nprivate account: ${privateAccount}\nverified account: ${verified}\nbio : ${bioLink}\nlikes : ${hearts}\nvideos : ${videos}\n\`\`\``;
+
+      const buttonMessage = {
+        image: { url: profile_pic_url },
+        caption: Text,
+      };
+      await message.client.sendMessage(message.jid, buttonMessage, { quoted: message });
+    } catch (error) {
+      console.error(error);
+      await message.reply("*_An error occurred while fetching the Tiktok profile. Please try again later._*");
+    }
+  }
+);
+
 
 Bixby(
   {
