@@ -1,5 +1,5 @@
 const { Sequelize } = require("sequelize");
-const fs = require("fs");
+const { existsSync } = require('fs')
 const path = require('path')
 const configPath = path.join(__dirname, './config.env')
 if (existsSync(configPath)) require('dotenv').config({ path: configPath })
