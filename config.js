@@ -1,6 +1,8 @@
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
-require("dotenv").config();
+const path = require('path')
+const configPath = path.join(__dirname, './config.env')
+if (existsSync(configPath)) require('dotenv').config({ path: configPath })
 const toBool = (x) => x === "true";
 const DATABASE_URL = process.env.DATABASE_URL || "./lib/db/database.db";
 
