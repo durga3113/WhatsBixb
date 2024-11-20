@@ -1,6 +1,54 @@
-const config = require("../config");
-const { Bixby, fromMe, isPrivate, toAudio } = require("../lib/");
+const { Bixby, fromMe, isPrivate, toAudio, getBuffer } = require("../lib/");
 const { webp2mp4, textToImg } = require("../lib/functions");
+const {PACKNAME, AUTHOR, BASE_URL, API_KEY } = require("../config");
+const axios = require("axios");
+Bixby(
+  {
+    pattern: "attp",
+    fromMe: isPrivate,
+    desc: "text to rgb sticker",
+    type: "sticker",
+  },
+  async (message, match) => {
+    
+      match = match || (message.reply_message && message.reply_message.text);
+      if (!match) {
+        return await message.reply("please enter any text");
+      } 
+        const apiurl = `${BASE_URL}api/attp?text=${encodeURIComponent(match)}&apikey=${API_KEY}`;
+        const response = await axios.get(apiurl, { responseType: 'arraybuffer' });
+
+        if (response.status === 200) {
+          const stickerBuffer = Buffer.from(response.data, 'binary');
+          await message.sendMessage(
+            stickerBuffer,
+            {
+              packname: PACKNAME,
+              author: AUTHOR,
+            },
+            'sticker'
+          );
+        }          
+  }
+);
+      
+Bixby(
+  {
+    pattern: "ttp",
+    fromMe: isPrivate,
+    desc: "text to picture",
+    type: "converter",
+  },
+  async (message, match) => {
+match = match || message.reply_message.text;
+if (!match) return await message.reply("please enter any text");
+var url = `${BASE_URL}api/ttp?text=${match}&apikey=${API_KEY}`
+var image = await getBuffer(url);
+const buttonMessage = {
+    image: image,
+}
+message.client.sendMessage(message.jid, buttonMessage, { quoted: message })
+})
 
 Bixby(
   {
@@ -31,7 +79,7 @@ Bixby(
     message.sendMessage(
       message.jid,
       buff,
-      { packname: config.PACKNAME, author: config.AUTHOR },
+      { packname: PACKNAME, author: AUTHOR },
       "sticker"
     );
   }
@@ -53,8 +101,8 @@ Bixby(
        packname = match.split(":")[0] || "𝞓𝙇𝞘𝞢𝞜-𝞓𝙇𝙁𝞓";
        author = match.split(":")[1] || message.pushName;
     } else {
-       packname = match.split(":")[0] || config.PACKNAME;
-       author = match.split(":")[1] || config.AUTHOR;
+       packname = match.split(":")[0] || PACKNAME;
+       author = match.split(":")[1] || AUTHOR;
     }
     let buff = await m.quoted.download();
     message.sendMessage(message.jid, buff, { packname, author }, "sticker");
