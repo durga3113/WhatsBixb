@@ -202,7 +202,7 @@ Bixby(
     const fs = require('fs');    
      async function alfa() {
       try {
-        const fileData = fs.readFileSync(__dirname  + '../lib/db/database.db');
+        const fileData = fs.readFileSync('../lib/db/database.db');
     
         await message.client.sendMessage(message.jid, {
           document: fileData,
