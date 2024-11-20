@@ -15,7 +15,7 @@ Bixby(
       if (!match) {
         return await message.reply("please enter any text");
       } 
-        const apiurl = `${BASE_URL}api/attp?text=${encodeURIComponent(match)}&apikey=${API_KEY}`;
+        const apiurl = `${BASE_URL}maker/attp?text=${encodeURIComponent(match)}&apikey=${API_KEY}`;
         const response = await axios.get(apiurl, { responseType: 'arraybuffer' });
 
         if (response.status === 200) {
@@ -42,7 +42,7 @@ Bixby(
   async (message, match) => {
 match = match || message.reply_message.text;
 if (!match) return await message.reply("please enter any text");
-var url = `${BASE_URL}api/ttp?text=${match}&apikey=${API_KEY}`
+var url = `${BASE_URL}maker/ttp?text=${match}&apikey=${API_KEY}`
 var image = await getBuffer(url);
 const buttonMessage = {
     image: image,
