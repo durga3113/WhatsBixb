@@ -11,7 +11,7 @@ Bixby(
   },
   async (message, match) => {
     
-      match = match || (message.reply_message && message.reply_message.text);
+      match = match || message.reply_message.text;
       if (!match) {
         return await message.reply("please enter any text");
       } 
