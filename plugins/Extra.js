@@ -1,5 +1,7 @@
 
 const { Bixby, isPrivate, parsedJid } = require("../lib");
+const fs = require("fs");
+const path = require("path"); 
 const {
     React
   } = require("../lib/db");
@@ -202,8 +204,8 @@ Bixby(
     const fs = require('fs');    
      async function alfa() {
       try {
-        const fileData = fs.readFileSync('../lib/db/database.db');
-    
+        const dbPath = path.join(global.__basedir, 'lib', 'db', 'database.db');
+        const fileData = fs.readFileSync(dbPath);
         await message.client.sendMessage(message.jid, {
           document: fileData,
           fileName: "database.db",
