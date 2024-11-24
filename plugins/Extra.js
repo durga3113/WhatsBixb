@@ -195,27 +195,28 @@ Bixby(
   {
     pattern: "getdb",
     fromMe: true,
-    desc: "Get the sqlite DB",
-    usage: 'getdb',
+    desc: "Get the SQLite DB",
+    usage: "getdb",
     type: "tool",
   },
   async (message, match) => {
+    try {
+      const dbPath = path.join(global.__basedir, 'lib', 'db', 'database.db');
+      const fileData = fs.readFileSync(dbPath);
+      
+      // Send the database file as a document
+      await message.client.sendMessage(message.jid, {
+        document: fileData,
+        fileName: "database.db",
+        mimetype: "application/x-sqlite3",
+      });
 
-    const fs = require('fs');    
-     async function alfa() {
-      try {
-        const dbPath = path.join(global.__basedir, 'lib', 'db', 'database.db');
-        const fileData = fs.readFileSync(dbPath);
-        await message.client.sendMessage(message.jid, {
-          document: fileData,
-          fileName: "database.db",
-          mimetype: "application/x-sqlite3",
-        });
-      } catch (error) {
-        console.error('Error sending database file:', error);
-      }
-    };
-    alfa()
-
+    } catch (error) {
+      console.error('Error sending database file:', error);
+      // Optionally inform the user about the error
+      await message.client.sendMessage(message.jid, {
+        text: "Failed to send the database file. Please check the logs for more details.",
+      });
+    }
   }
 );
