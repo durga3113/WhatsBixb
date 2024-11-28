@@ -6,7 +6,7 @@ const axios = require("axios");
 Bixby(
   {
     pattern: "tgs",
-    fromMe: isPublic,
+    fromMe: isPrivate,
     desc: "Download Sticker From Telegram",
     type: "tool",
   },
