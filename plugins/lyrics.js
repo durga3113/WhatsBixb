@@ -10,6 +10,7 @@ Bixby(
     type: "tools",
   },
   async (message, match) => {
+    match = match || message.reply_message.text
     try {
       if (!match || !match.includes(";")) {
         return await message.reply(
