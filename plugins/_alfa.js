@@ -1,9 +1,5 @@
-const {Bixby, isPrivate, sleep, Imagine, getBuffer } = require("../lib")
+const { Bixby, isPrivate } = require("../lib")
 const config = require('../config')
-const fs = require("fs")
-const { exec, spawn, execSync } = require("child_process")
-const fetch = require('node-fetch')
-const ffmpeg = require("../lib/functions");
 const googleTTS = require('google-tts-api');
 
 const getRandom = (text) => { return `${Math.floor(Math.random() * 10000)}${text}` }
