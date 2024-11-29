@@ -14,7 +14,7 @@ Bixby(
     pattern: "ig",
     fromMe: isPrivate,
     desc: "insta profile search",
-    type: "search",
+    type: "stalk",
   },
   async (message, match) => {
     match = match || message.reply_message.text;
@@ -49,7 +49,7 @@ Bixby(
     pattern: "tiktok",
     fromMe: isPrivate,
     desc: "tiktok profile search",
-    type: "search",
+    type: "stalk",
   },
   async (message, match) => {
     match = match || message.reply_message.text;
@@ -85,7 +85,7 @@ Bixby(
     pattern: "github",
     fromMe: isPrivate,
     desc: "get user data from github",
-    type: "search",
+    type: "stalk",
   },
   async (message, match) => {
     match = match || message.reply_message.text;
