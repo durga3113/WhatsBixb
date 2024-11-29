@@ -1,4 +1,4 @@
-FROM node:18-slim
+FROM node:22.11.0
 
 # Install dependencies and build tools
 RUN apt-get update && \
