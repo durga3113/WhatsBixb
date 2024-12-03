@@ -4,8 +4,8 @@
   "description": "Whatsapp Bot",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "main": "node index.js"
+    "start": "pm2 start index.js --name WhatsBixby && pm2 logs WhatsBixby",
+    "main": "index.js"
   },
   "engines": {
     "node": "22.11.0",
@@ -20,6 +20,7 @@
     "@google/generative-ai": "0.21.0",
     "@whiskeysockets/baileys": "6.7.9",
     "@vitalets/google-translate-api": "9.2.0",
+    "pm2": "5.4.3",
     "acrcloud": "1.4.0",
     "aes256": "1.1.0",
     "archiver": "7.0.1",
