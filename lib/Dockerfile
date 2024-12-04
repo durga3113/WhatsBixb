@@ -7,7 +7,7 @@ RUN git clone https://github.com/DX-MODS/WhatsBixby.git /Bixby
 WORKDIR /Bixby
 
 # Install a specific version of npm locally (inside the project directory)
-RUN npm install npm@10.9.1
+RUN npm install -g npm@10.9.1
 # Install dependencies
 RUN npm install
 
