@@ -87,7 +87,7 @@ const port = process.env.PORT || 8000;
 // Express routes
 app.post("/restart", (req, res) => {
     console.log("[Restarting App]");
-    restartApp("app-name"); // Replace "app-name" with the PM2 app name
+    restartApp("WhatsBixby"); // Replace "app-name" with the PM2 app name
     res.sendStatus(200);
 });
 
@@ -105,7 +105,7 @@ app.post("/shutdown", (req, res) => {
 
 app.post("/bootup", (req, res) => {
     console.log("[BootUp]");
-    startApp("app.js", "app-name"); // Replace with your app's script and name
+    startApp("index.js", "WhatsBixby"); // Replace with your app's script and name
     res.sendStatus(200);
 });
 
