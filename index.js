@@ -6,12 +6,8 @@ const config = require("./config");
 const connect = require("./lib/connection");
 const { getandRequirePlugins } = require("./lib/db/plugins");
 const { UpdateLocal, WriteSession } = require("./lib");
-
+const { startApp, restartApp, shutdown } = require("./lib/pm2");
 global.__basedir = __dirname;
-
-// Initialize Express app
-const app = express();
-const port = process.env.PORT || 8000;
 
 // Function to delete sessions except for Aurora.txt
 async function deleteSession() {
@@ -84,9 +80,14 @@ async function initialize() {
 // Start the auth and initialization process
 auth();
 
+// Initialize Express app
+const app = express();
+const port = process.env.PORT || 8000;
+
 // Express routes
 app.post("/restart", (req, res) => {
-    console.log("[Restarting]");
+    console.log("[Restarting App]");
+    restartApp("app-name"); // Replace "app-name" with the PM2 app name
     res.sendStatus(200);
 });
 
@@ -97,14 +98,15 @@ app.post("/update", (req, res) => {
 });
 
 app.post("/shutdown", (req, res) => {
-    console.log("[ShutDown]");
-    console.log("Shutting down the server...");
-    process.exit(0); // Stop the process
+    console.log("[Shutting Down PM2]");
+    shutdown();
+    res.sendStatus(200);
 });
 
 app.post("/bootup", (req, res) => {
     console.log("[BootUp]");
-    return res.sendStatus(200);
+    startApp("app.js", "app-name"); // Replace with your app's script and name
+    res.sendStatus(200);
 });
 
 app.post("/feksession", (req, res) => {
