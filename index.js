@@ -7,40 +7,43 @@ const connect = require("./lib/connection");
 const { getandRequirePlugins } = require("./lib/db/plugins");
 const { UpdateLocal, WriteSession } = require("./lib");
 const { startApp, restartApp, shutdown } = require("./lib/pm2");
+
 global.__basedir = __dirname;
+const sessionPath = path.join(__dirname, "session/");
+const credsPath = path.join(__dirname, "lib/session/creds.json");
+
+process.on("unhandledRejection", (reason, promise) => {
+    console.error("Unhandled Rejection at:", promise, "reason:", reason);
+});
 
 // Function to delete sessions except for Aurora.txt
 async function deleteSession() {
-    fsx.readdir("session/", (err, files) => {
-        if (err) {
-            console.error("Error reading directory:", err);
-            return;
-        }
-
-        files.forEach((file) => {
-            if (file !== "Aurora.txt") {
-                fsx.unlink(path.join("session/", file), (err) => {
-                    if (err) {
-                        console.error("Error deleting file:", err);
-                        return;
-                    }
-                    console.log(`${file} has been deleted.`);
-                });
-            }
-        });
-    });
+    try {
+        const files = await fs.readdir(sessionPath);
+        await Promise.all(
+            files
+                .filter((file) => file !== "Aurora.txt")
+                .map((file) =>
+                    fs.unlink(path.join(sessionPath, file)).then(() =>
+                        console.log(`${file} has been deleted.`)
+                    )
+                )
+        );
+    } catch (err) {
+        console.error("Error deleting session files:", err);
+    }
 }
 
 // Auth function to ensure credentials and initialize server
 async function auth() {
     try {
-        if (!fsx.existsSync("./lib/session/creds.json")) {
+        if (!fsx.existsSync(credsPath)) {
             await WriteSession();
         }
         return initialize();
     } catch (error) {
         console.error("AuthFile Generation Error:", error);
-        return process.exit(1);
+        process.exit(1);
     }
 }
 
@@ -73,7 +76,7 @@ async function initialize() {
         return await connect();
     } catch (error) {
         console.error("Initialization error:", error);
-        return process.exit(1); // Exit with error status
+        process.exit(1);
     }
 }
 
@@ -87,14 +90,14 @@ const port = process.env.PORT || 8000;
 // Express routes
 app.post("/restart", (req, res) => {
     console.log("[Restarting App]");
-    restartApp("WhatsBixby"); // Replace "app-name" with the PM2 app name
+    restartApp("WhatsBixby");
     res.sendStatus(200);
 });
 
-app.post("/update", (req, res) => {
+app.post("/update", async (req, res) => {
     console.log("[Discarding Session]");
-    deleteSession();
-    return res.sendStatus(200);
+    await deleteSession();
+    res.sendStatus(200);
 });
 
 app.post("/shutdown", (req, res) => {
@@ -105,13 +108,8 @@ app.post("/shutdown", (req, res) => {
 
 app.post("/bootup", (req, res) => {
     console.log("[BootUp]");
-    startApp("index.js", "WhatsBixby"); // Replace with your app's script and name
+    startApp("index.js", "WhatsBixby");
     res.sendStatus(200);
-});
-
-app.post("/feksession", (req, res) => {
-    console.log("[Discarding Session]");
-    return res.sendStatus(200);
 });
 
 app.get("/", (req, res) => {
