@@ -20,7 +20,6 @@
     "@google/generative-ai": "0.21.0",
     "@whiskeysockets/baileys": "6.7.9",
     "@vitalets/google-translate-api": "9.2.0",
-    "pm2": "5.4.3",
     "acrcloud": "1.4.0",
     "aes256": "1.1.0",
     "archiver": "7.0.1",
