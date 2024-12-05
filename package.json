@@ -4,7 +4,7 @@
   "description": "Whatsapp Bot",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --name WhatsBixby && pm2 logs WhatsBixby",
+    "start": "pm2 start server.js --name WhatsBixby && pm2 logs WhatsBixby",
     "main": "index.js"
   },
   "engines": {
