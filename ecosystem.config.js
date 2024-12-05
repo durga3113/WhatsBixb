@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'WhatsBixby',
-      script: 'index.js',         // Correct relative path to 'index.js'
+      script: './index.js',         // Correct relative path to 'index.js'
       instances: 1,                  // Single instance (fork mode)
       exec_mode: 'fork',             // Use 'fork' mode
       watch: false,                  // Disable file watching
