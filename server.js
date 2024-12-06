@@ -177,6 +177,12 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'lib/base/index.html'));
 });
 
+app.get('/log', (req, res) => {
+    res.sendFile(path.join(__dirname, 'lib/base/logs.html'));
+});
+
+
+
 app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
 
 if (CLUSTER && cluster.isMaster) {
