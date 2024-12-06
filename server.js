@@ -163,8 +163,21 @@ app.post('/bootup', (req, res) => {
     res.sendStatus(200);
 });
 
-app.get('/health', healthCheck);
-app.get('/status', workerStatus);
+app.get('/status', (req, res) => {
+    const workersStatus = Object.entries(workers).map(([file, worker]) => ({
+        file,
+        pid: worker.process.pid,
+        status: worker.isConnected() ? 'Connected' : 'Disconnected',
+    }));
+
+    res.json({
+        status: 'OK',
+        uptime: process.uptime(),
+        memoryUsage: process.memoryUsage(),
+        totalWorkers: Object.keys(workers).length,
+        workers: workersStatus,
+    });
+});
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'lib/base/index.html'));
