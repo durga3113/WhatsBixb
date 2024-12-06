@@ -105,14 +105,22 @@ async function deleteSession() {
     });
 }
 
+function formatUptime(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${hours} hour${hours !== 1 ? 's' : ''}, ${minutes} minute${minutes !== 1 ? 's' : ''}, ${secs} second${secs !== 1 ? 's' : ''}`;
+}
+
 function healthCheck(req, res) {
     res.json({
         status: 'OK',
-        uptime: process.uptime(),
+        uptime: formatUptime(process.uptime()),
         memoryUsage: process.memoryUsage(),
         workers: Object.keys(workers).length,
     });
 }
+
 
 function workerStatus(req, res) {
     const statuses = Object.entries(workers).map(([file, worker]) => ({
