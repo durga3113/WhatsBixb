@@ -1,11 +1,12 @@
+const express = require("express");
 const cluster = require('cluster');
 const os = require('os');
 const path = require('path');
 const fs = require('fs');
-const express = require("express");
 
 const CLUSTER = process.env.CLUSTER === 'true';
 const workers = {};
+const workerLogs = {}; // To store logs for each worker
 
 function start(file) {
     if (workers[file]) return;
@@ -20,10 +21,20 @@ function start(file) {
     p.on('message', (data) => handleWorkerMessage(file, p, data));
     p.on('exit', (code, signal) => handleWorkerExit(file, code, signal));
     workers[file] = p;
+
+    // Initialize logs for this worker
+    workerLogs[file] = [];
 }
 
 function handleWorkerMessage(file, worker, data) {
     console.log(`[RECEIVED from ${file}]`, data);
+
+    // Push log data into memory
+    workerLogs[file].push({
+        timestamp: new Date().toISOString(),
+        data,
+    });
+
     switch (data) {
         case 'reset':
             resetProcess(file);
@@ -112,13 +123,8 @@ function workerStatus(req, res) {
     res.json({ workers: statuses });
 }
 
-function monitorMemoryUsage() {
-    setInterval(() => {
-        for (const file in workers) {
-            const worker = workers[file];
-            worker.send('getUsage');
-        }
-    }, 10000); // Check every 10 seconds
+function getLogs(req, res) {
+    res.json(workerLogs);
 }
 
 // Handle graceful shutdown
@@ -163,21 +169,9 @@ app.post('/bootup', (req, res) => {
     res.sendStatus(200);
 });
 
-app.get('/status', (req, res) => {
-    const workersStatus = Object.entries(workers).map(([file, worker]) => ({
-        file,
-        pid: worker.process.pid,
-        status: worker.isConnected() ? 'Connected' : 'Disconnected',
-    }));
-
-    res.json({
-        status: 'OK',
-        uptime: process.uptime(),
-        memoryUsage: process.memoryUsage(),
-        totalWorkers: Object.keys(workers).length,
-        workers: workersStatus,
-    });
-});
+app.get('/health', healthCheck);
+app.get('/status', workerStatus);
+app.get('/logs', getLogs); // New route for logs
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'lib/base/index.html'));
