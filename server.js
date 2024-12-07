@@ -5,8 +5,7 @@ const path = require('path');
 const fs = require('fs');
 
 const numCPUs = os.cpus().length;
-const TOTAL_PROCESSES = parseInt(process.env.TOTAL_PROCESSES || numCPUs.toString(), 10);
-
+const TOTAL_PROCESSES = process.env.TOTAL_PROCESSES ? Number(process.env.TOTAL_PROCESSES) : numCPUs;
 const workers = new Map();
 const workerLogs = new Map();
 
@@ -14,17 +13,18 @@ function startWorker(file) {
     if (workers.has(file)) return;
 
     const worker = cluster.fork({ workerFile: file });
+    workerLogs.set(file, []);
 
     worker.on('message', (data) => handleWorkerMessage(file, worker, data));
     worker.on('exit', (code, signal) => {
-        console.error(`Worker ${worker.process.pid} exited with code ${code} (${signal}). Restarting...`);
+        console.error(`Worker ${file} exited (pid: ${worker.process.pid}). Code: ${code}, Signal: ${signal}`);
         workers.delete(file);
         workerLogs.delete(file);
+        // Restart logic with a retry cap (optional)
         startWorker(file);
     });
 
     workers.set(file, worker);
-    workerLogs.set(file, []);
 }
 
 function handleWorkerMessage(file, worker, data) {
@@ -50,15 +50,6 @@ function handleWorkerMessage(file, worker, data) {
                 console.log(`Worker ${file} - CPU: ${data.cpu}% | Memory: ${data.memory}MB`);
             }
             break;
-    }
-}
-
-function handleWorkerExit(file, code, signal) {
-    console.error(`Worker for ${file} exited with code: ${code}, signal: ${signal}`);
-    delete workers[file];
-    if (CLUSTER) {
-        console.log("Restarting the process...");
-        start(file);
     }
 }
 
@@ -101,22 +92,18 @@ function workerStatus(req, res) {
     res.json({ workers: statuses });
 }
 
-function deleteSession() { // Async not needed here
-    fs.readdir('session/', (err, files) => {
-        if (err) {
-            console.error('Error reading directory:', err);
-            return;
-        }
-
-        for (const file of files) {  // Use for...of for cleaner iteration
+async function deleteSession() {
+    try {
+        const files = await fs.promises.readdir('session/');
+        await Promise.all(files.map(async (file) => {
             if (file !== 'Aurora.txt') {
-                fs.unlink(path.join('session/', file), (err) => {
-                    if (err) console.error('Error deleting file:', err);
-                    else console.log(`${file} has been deleted.`);
-                });
+                await fs.promises.unlink(path.join('session/', file));
+                console.log(`${file} has been deleted.`);
             }
-        }
-    });
+        }));
+    } catch (err) {
+        console.error('Error deleting session files:', err);
+    }
 }
 
 function formatUptime(seconds) {
@@ -174,7 +161,7 @@ app.post('/shutdown', (req, res) => {
 
 app.post('/bootup', (req, res) => {
     console.log("[BootUp]");
-    start("index.js");
+    startWorker("index.js");
     res.sendStatus(200);
 });
 
