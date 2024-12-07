@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 
 const numCPUs = os.cpus().length;
-const TOTAL_PROCESSES = process.env.TOTAL_PROCESSES ? Number(process.env.TOTAL_PROCESSES) : numCPUs;
+const TOTAL_PROCESSES = Number(process.env.TOTAL_PROCESSES) || numCPUs;
 const workers = new Map();
 const workerLogs = new Map();
 let restartAttempts = 0;
@@ -22,14 +22,8 @@ function startWorker(file) {
     console.error(`Error in worker ${file}:`, error);
 });
     worker.on('exit', (code, signal) => {
-    if (restartAttempts < MAX_RESTART_ATTEMPTS) {
-        console.log(`Restarting worker ${file} after exit (Attempt ${restartAttempts + 1})`);
-        restartAttempts++;
-        setTimeout(() => startWorker(file), 5000); // Wait 5 seconds before restarting
-    } else {
-        console.error(`Max restart attempts reached for worker ${file}`);
-    }
-});
+        handleWorkerExit(file, code, signal);  // Call to restart mechanism
+    });
 
     workers.set(file, worker);
 }
@@ -57,6 +51,19 @@ function handleWorkerMessage(file, worker, data) {
                 console.log(`Worker ${file} - CPU: ${data.cpu}% | Memory: ${data.memory}MB`);
             }
             break;
+    }
+}
+
+function handleWorkerExit(file, code, signal) {
+    let attempts = restartAttemptsMap.get(file) || 0;
+
+    if (attempts < MAX_RESTART_ATTEMPTS) {
+        console.log(`Worker ${file} exited (Code: ${code}, Signal: ${signal}). Restarting... (Attempt ${attempts + 1})`);
+        
+        restartAttemptsMap.set(file, attempts + 1);  // Increment restart attempts
+        setTimeout(() => startWorker(file), 5000); // Wait 5 seconds before restarting the worker
+    } else {
+        console.error(`Max restart attempts reached for worker ${file}`);
     }
 }
 
@@ -101,15 +108,20 @@ function workerStatus(req, res) {
 
 async function deleteSession() {
     try {
-        const files = await fs.promises.readdir('session/');
-        await Promise.all(files.map(async (file) => {
-            if (file !== 'Aurora.txt') {
-                await fs.promises.unlink(path.join('session/', file));
-                console.log(`${file} has been deleted.`);
-            }
-        }));
+        const sessionPath = 'session/';
+        if (fs.existsSync(sessionPath)) {
+            const files = await fs.promises.readdir(sessionPath);
+            await Promise.all(files.map(async (file) => {
+                if (file !== 'Aurora.txt') {
+                    await fs.promises.unlink(path.join(sessionPath, file));
+                    console.log(`${file} has been deleted.`);
+                }
+            }));
+        } else {
+            console.log('Session directory does not exist.');
+        }
     } catch (err) {
-        console.error('Error deleting session files:', err);
+        logger.error('Error deleting session files:', err);
     }
 }
 
@@ -167,7 +179,7 @@ app.post('/bootup', (req, res) => {
 });
 
 app.get('/health', (req, res) => {
-    const statuses = Array.from(workers).map(([file, worker]) => ({
+    const statuses = Array.from(workers.entries()).map(([file, worker]) => ({
         file,
         pid: worker.process.pid,
         status: worker.isConnected() ? 'Connected' : 'Disconnected',
