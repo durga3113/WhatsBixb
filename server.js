@@ -8,6 +8,8 @@ const numCPUs = os.cpus().length;
 const TOTAL_PROCESSES = process.env.TOTAL_PROCESSES ? Number(process.env.TOTAL_PROCESSES) : numCPUs;
 const workers = new Map();
 const workerLogs = new Map();
+let restartAttempts = 0;
+const MAX_RESTART_ATTEMPTS = 3;
 
 function startWorker(file) {
     if (workers.has(file)) return;
@@ -16,13 +18,18 @@ function startWorker(file) {
     workerLogs.set(file, []);
 
     worker.on('message', (data) => handleWorkerMessage(file, worker, data));
+    worker.on('error', (error) => {
+    console.error(`Error in worker ${file}:`, error);
+});
     worker.on('exit', (code, signal) => {
-        console.error(`Worker ${file} exited (pid: ${worker.process.pid}). Code: ${code}, Signal: ${signal}`);
-        workers.delete(file);
-        workerLogs.delete(file);
-        // Restart logic with a retry cap (optional)
-        startWorker(file);
-    });
+    if (restartAttempts < MAX_RESTART_ATTEMPTS) {
+        console.log(`Restarting worker ${file} after exit (Attempt ${restartAttempts + 1})`);
+        restartAttempts++;
+        setTimeout(() => startWorker(file), 5000); // Wait 5 seconds before restarting
+    } else {
+        console.error(`Max restart attempts reached for worker ${file}`);
+    }
+});
 
     workers.set(file, worker);
 }
@@ -153,14 +160,6 @@ app.post('/shutdown', async (req, res) => {
     res.sendStatus(200);
 });
 
-  // Give workers time to shut down before exiting the master process
-  setTimeout(() => {
-    process.exit(0); 
-  }, 5000); // Adjust timeout as needed
-
-  res.sendStatus(200);
-});
-
 app.post('/bootup', (req, res) => {
     console.log("[BootUp]");
     startWorker("index.js");
@@ -168,14 +167,17 @@ app.post('/bootup', (req, res) => {
 });
 
 app.get('/health', (req, res) => {
+    const statuses = Array.from(workers).map(([file, worker]) => ({
+        file,
+        pid: worker.process.pid,
+        status: worker.isConnected() ? 'Connected' : 'Disconnected',
+    }));
     res.json({
         status: 'OK',
         uptime: formatUptime(process.uptime()),
         memoryUsage: process.memoryUsage(),
-        workers: workers.size,
+        workers: statuses,
     });
 });
-
-app.get('/status', workerStatus);
 
 app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));
