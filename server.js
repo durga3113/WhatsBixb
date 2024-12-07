@@ -10,6 +10,7 @@ const workers = new Map();
 const workerLogs = new Map();
 let restartAttempts = 0;
 const MAX_RESTART_ATTEMPTS = 3;
+const restartAttemptsMap = new Map(); 
 
 function startWorker(file) {
     if (workers.has(file)) return;
