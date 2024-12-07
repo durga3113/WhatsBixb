@@ -144,12 +144,14 @@ app.post('/update', (req, res) => {
     res.sendStatus(200);
 });
 
-app.post('/shutdown', (req, res) => {
-  console.log("[Shutting Down]");
-
-  for (const worker of workers.values()) {
-    worker.send('shutdown'); // Signal workers to shut down gracefully
-  }
+app.post('/shutdown', async (req, res) => {
+    console.log("[Shutting Down]");
+    for (const worker of workers.values()) {
+        worker.send('shutdown');
+    }
+    setTimeout(() => process.exit(0), 5000);
+    res.sendStatus(200);
+});
 
   // Give workers time to shut down before exiting the master process
   setTimeout(() => {
