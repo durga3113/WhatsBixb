@@ -3,7 +3,7 @@ const os = require('os');
 const path = require('path');
 const fs = require('fs');
 const express = require("express");
-const overrideConsoleLogs = require('./loggerOverride'); // Import the loggerOverride function
+const overrideConsoleLogs = require('./lib'); // Import the loggerOverride function
 
 const workers = {};
 const numCPUs = process.env.TOTAL_FORK === '1' ? 1 : os.cpus().length; // Check environment variable
