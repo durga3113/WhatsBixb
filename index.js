@@ -8,6 +8,13 @@ const { UpdateLocal, WriteSession, overrideConsoleLogs } = require("./lib");
 
 global.__basedir = __dirname;
 
+process.on('message', (data) => {
+    if (data.type === 'overrideLogs') {
+        // Override console methods in the worker process
+        overrideConsoleLogs();
+    }
+});
+
 async function auth() {
   try {
     if (!fsx.existsSync("./lib/session/creds.json")) {
@@ -52,10 +59,3 @@ async function initialize() {
 }
 
 auth();
-
-process.on('message', (data) => {
-    if (data.type === 'overrideLogs') {
-        // Override console methods in the worker process
-        overrideConsoleLogs();
-    }
-});
