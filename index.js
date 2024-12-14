@@ -4,7 +4,7 @@ const path = require("path");
 const config = require("./config");
 const connect = require("./lib/connection");
 const { getandRequirePlugins } = require("./lib/db/plugins");
-const { UpdateLocal, WriteSession} = require("./lib");
+const { UpdateLocal, WriteSession, overrideConsoleLogs } = require("./lib");
 
 global.__basedir = __dirname;
 
@@ -52,3 +52,10 @@ async function initialize() {
 }
 
 auth();
+
+process.on('message', (data) => {
+    if (data.type === 'overrideLogs') {
+        // Override console methods in the worker process
+        overrideConsoleLogs();
+    }
+});
