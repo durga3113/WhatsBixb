@@ -6,6 +6,28 @@ const express = require("express");
 
 const workers = {};
 const numCPUs = process.env.TOTAL_FORK === '1' ? 1 : os.cpus().length; // Check environment variable
+const logFilePath = path.join(__dirname, 'worker-logs.txt');
+
+// Custom logging function
+function customLogger(type, message) {
+    const logEntry = `[${type.toUpperCase()} - ${new Date().toISOString()}] ${message}\n`;
+
+    // Log to file
+    fs.appendFileSync(logFilePath, logEntry);
+
+    // Optionally, log to the console
+    process.stdout.write(logEntry);
+}
+
+// Override console methods for the master process
+['log', 'warn', 'error', 'info', 'debug'].forEach((method) => {
+    const originalMethod = console[method];
+    console[method] = (...args) => {
+        const message = args.map(arg => (typeof arg === 'object' ? JSON.stringify(arg) : arg)).join(' ');
+        customLogger(method, message);
+        originalMethod.apply(console, args); // Optionally call the original console method
+    };
+});
 
 function start(file) {
     if (workers[file]) return;
@@ -19,18 +41,11 @@ function start(file) {
         });
 
         const p = cluster.fork();
-        p.on('message', async (data) => {
-            console.log(`[RECEIVED from ${file}]`, "Restart");
-            switch (data) {
-                case 'reset':
-                    resetProcess(file);
-                    break;
-                case 'uptime':
-                    p.send(process.uptime());
-                    break;
-                case 'shutdown':
-                    shutdown();
-                    break;
+
+        // Handle logs from workers
+        p.on('message', (data) => {
+            if (data.type === 'log') {
+                customLogger(data.level, `[Worker ${p.process.pid}] ${data.message}`);
             }
         });
 
@@ -50,7 +65,7 @@ function start(file) {
         if (!workers[file]) {
             workers[file] = [];
         }
-        workers[file].push(p); // Store the worker in an array for the file
+        workers[file].push(p);
     }
 }
 
@@ -113,6 +128,17 @@ async function deleteSession() {
 console.log(`==================================================\n                Server Starting...!\n==================================================`);
 const app = express();
 const port = process.env.PORT || 8000;
+
+// Add worker log endpoint
+app.get('/logs', (req, res) => {
+    fs.readFile(logFilePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error("Error reading log file:", err);
+            return res.status(500).send("Error reading log file.");
+        }
+        res.type('text/plain').send(data);
+    });
+});
 
 app.post('/restart', (req, res) => {
     console.log("[Restarting]");
