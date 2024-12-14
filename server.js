@@ -3,6 +3,7 @@ const os = require('os');
 const path = require('path');
 const fs = require('fs');
 const express = require("express");
+const overrideConsoleLogs = require('./loggerOverride'); // Import the loggerOverride function
 
 const workers = {};
 const numCPUs = process.env.TOTAL_FORK === '1' ? 1 : os.cpus().length; // Check environment variable
@@ -19,16 +20,6 @@ function customLogger(type, message) {
     process.stdout.write(logEntry);
 }
 
-// Override console methods for the master process
-['log', 'warn', 'error', 'info', 'debug'].forEach((method) => {
-    const originalMethod = console[method];
-    console[method] = (...args) => {
-        const message = args.map(arg => (typeof arg === 'object' ? JSON.stringify(arg) : arg)).join(' ');
-        customLogger(method, message);
-        originalMethod.apply(console, args); // Optionally call the original console method
-    };
-});
-
 function start(file) {
     if (workers[file]) return;
 
@@ -41,6 +32,11 @@ function start(file) {
         });
 
         const p = cluster.fork();
+
+        // Send the overrideLogs message to the worker to apply console log overriding
+        p.on('online', () => {
+            p.send({ type: 'overrideLogs' }); // Notify worker to override console logs
+        });
 
         // Handle logs from workers
         p.on('message', (data) => {
