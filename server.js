@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const express = require("express");
 const overrideConsoleLogs = require('./lib'); // Import the loggerOverride function
-
+const axios = require('axios');
 const workers = {};
 const numCPUs = process.env.TOTAL_FORK === '1' ? 1 : os.cpus().length; // Check environment variable
 const logFilePath = path.join(__dirname, 'worker-logs.txt');
@@ -121,9 +121,59 @@ async function deleteSession() {
     });
 }
 
+async function getGeolocation() {
+    try {
+        const response = await axios.get('http://ip-api.com/json/');
+        return response.data; // Return geolocation data
+    } catch (error) {
+        console.error('Error fetching geolocation:', error.message);
+        return { error: 'Unable to fetch geolocation' };
+    }
+}
+
 console.log(`==================================================\n                Server Starting...!\n==================================================`);
 const app = express();
 const port = process.env.PORT || 8000;
+
+app.get('/info', async (req, res) => {
+    const geolocation = await getGeolocation(); // Fetch geolocation data
+
+    const serverInfo = {
+        server: {
+            name: 'Cortana Server',
+            port: port,
+            uptime: process.uptime(),
+            nodeVersion: process.version,
+            memoryUsage: process.memoryUsage(),
+            environment: process.env.NODE_ENV || 'development',
+        },
+        cluster: {
+            isMaster: cluster.isMaster,
+            workers: Object.keys(cluster.workers).map(id => ({
+                id: id,
+                pid: cluster.workers[id].process.pid,
+                isOnline: cluster.workers[id].isConnected(),
+            })),
+        },
+        os: {
+            platform: os.platform(),
+            type: os.type(),
+            release: os.release(),
+            hostname: os.hostname(),
+            totalMemory: os.totalmem(),
+            freeMemory: os.freemem(),
+            cpus: os.cpus().map(cpu => cpu.model),
+            cpuCount: os.cpus().length,
+        },
+        paths: {
+            logFilePath: logFilePath,
+            sessionDir: path.resolve('session/'),
+        },
+        location: geolocation, // Include geolocation data
+    };
+
+    res.json(serverInfo);
+});
 
 // Add worker log endpoint
 app.get('/logs', (req, res) => {
