@@ -131,6 +131,31 @@ async function getGeolocation() {
     }
 }
 
+function formatUptime(seconds) {
+    const years = Math.floor(seconds / (365 * 24 * 60 * 60));
+    seconds %= 365 * 24 * 60 * 60;
+
+    const months = Math.floor(seconds / (30 * 24 * 60 * 60));
+    seconds %= 30 * 24 * 60 * 60;
+
+    const days = Math.floor(seconds / (24 * 60 * 60));
+    seconds %= 24 * 60 * 60;
+
+    const hours = Math.floor(seconds / 3600);
+    seconds %= 3600;
+
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+
+    let uptime = '';
+    if (years) uptime += `${years} years, `;
+    if (months) uptime += `${months} months, `;
+    if (days) uptime += `${days} days, `;
+    uptime += `${hours} hours, ${minutes} minutes, ${secs} seconds`;
+
+    return uptime;
+}
+
 console.log(`==================================================\n                Server Starting...!\n==================================================`);
 const app = express();
 const port = process.env.PORT || 8000;
@@ -142,7 +167,7 @@ app.get('/info', async (req, res) => {
         server: {
             name: 'Cortana Server',
             port: port,
-            uptime: process.uptime(),
+            uptime: `Uptime: ${formatUptime(process.uptime())}`, // Use formatted uptime
             nodeVersion: process.version,
             memoryUsage: process.memoryUsage(),
             environment: process.env.NODE_ENV || 'development',
@@ -166,15 +191,14 @@ app.get('/info', async (req, res) => {
             cpuCount: os.cpus().length,
         },
         paths: {
-            logFilePath: logFilePath,
+            logFilePath: path.resolve('worker-logs.txt'),
             sessionDir: path.resolve('session/'),
         },
-        location: geolocation, // Include geolocation data
+        location: geolocation,
     };
 
     res.json(serverInfo);
 });
-
 // Add worker log endpoint
 app.get('/logs', (req, res) => {
     fs.readFile(logFilePath, 'utf8', (err, data) => {
