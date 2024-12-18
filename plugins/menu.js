@@ -3,7 +3,7 @@ const { sendMenu } = require("../lib/functions");
 
 Bixby({
  pattern: "menu",
- fromMe: isPublic,
+ fromMe: isPrivate,
  desc: "show your menu items",
  type: "information",
  },
