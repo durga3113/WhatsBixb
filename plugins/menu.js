@@ -1,5 +1,5 @@
 const { Bixby, isPrivate, getBuffer } = require("../lib");
-const { events } = require("../lib/events");
+const { plugins } = require("../lib/events");
 const { tiny } = require("../lib/functions");
 const { OWNER_NAME, BOT_NAME, WORK_TYPE, BOT_IMG } = require("../config");
 
