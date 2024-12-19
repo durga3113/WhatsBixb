@@ -1,7 +1,7 @@
 const plugins = require("../lib/events");
 const { Bixby, isPrivate, clockString, pm2Uptime} = require("../lib");
 const { fancy10, typewriter, tiny } = require("../lib/functions")
-const config = require("../config");
+const { BOT_NAME, OWNER_NAME, WORK_TYPE, } = require("../config");
 
 const { hostname, uptime, totalmem, freemem } = require("os");
 
@@ -75,28 +75,28 @@ Description: ${i.desc}\`\`\``;
         
       } else {
       let { prefix } = message;
-      let [date, time] = new Date()
+      const stars = ['☼︎','★','✦','✬','⁂','✢','✣','✥','✲','⌤','⇵','⟺','⍩','∞','⍙','⌭','⌮','〶','㊋'];
+        const star = stars[Math.floor(Math.random()*stars.length)];
+        let [date, time] = new Date()
         .toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         .split(",");
-
-        let menu = `╭═══〘 ${config.BOT_NAME} 〙═══⊷❍
-┃✧╭──────────────
-┃✧│
-┃✧│ Owner : ${config.OWNER_NAME}
-┃✧│ User : ${message.pushName}
-┃✧│ Total RAM: ${avbMem.toFixed(2)} GB
-┃✧│ Available RAM: ${allFreeMem.toFixed(0)}GB / ${avbMem.toFixed(2)}GB
-┃✧│ Commands: ${plugins.commands.length}
-┃✧│ Uptime: ${await formatTime(process.uptime().toFixed(0))}
-┃✧│ Version: ${require("../package.json").version}
-┃✧│
-┃✧│
-┃✧│  ▎▍▌▌▉▏▎▌▉▐▏▌▎
-┃✧│  ▎▍▌▌▉▏▎▌▉▐▏▌▎
-┃✧│   ${ await message.pushName}
-┃✧│
-┃✧╰───────────────
-╰═════════════════⊷`;
+        let menu = `╭═══〘 ${BOT_NAME} 〙═══⊷❍
+┃${star}╭──────────────
+┃${star}│
+┃${star}│ owner : ${OWNER_NAME}
+┃${star}│ user : ${message.pushName}
+┃${star}│ mode : ${WORK_TYPE}
+┃${star}│ server : null
+┃${star}│ available ram: 10GB
+┃${star}│ version: 2.0.1
+┃${star}│
+┃${star}│
+┃${star}│  ▎▍▌▌▉▏▎▌▉▐▏▌▎
+┃${star}│  ▎▍▌▌▉▏▎▌▉▐▏▌▎
+┃${star}│  ${BOT_NAME}
+┃${star}│ 
+┃${star}╰───────────────
+╰══════════════════⊷❍`;
       let cmnd = [];
       let cmd;
       let category = [];
