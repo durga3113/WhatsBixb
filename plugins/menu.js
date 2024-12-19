@@ -1,7 +1,7 @@
 const plugins = require("../lib/events");
 const { Bixby, isPrivate, clockString, pm2Uptime} = require("../lib");
 const { fancy10, typewriter, tiny } = require("../lib/functions")
-const { BOT_NAME, OWNER_NAME, WORK_TYPE, } = require("../config");
+const { BOT_NAME, OWNER_NAME, WORK_TYPE, BOT_IMG} = require("../config");
 
 const { hostname, uptime, totalmem, freemem } = require("os");
 
