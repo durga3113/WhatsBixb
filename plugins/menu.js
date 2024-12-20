@@ -123,13 +123,13 @@ Description: ${i.desc}\`\`\``;
       cmnd.sort();
       category.sort().forEach((cmmd) => {
         menu += `
-╭════〘 ${cmmd} 〙════⊷❍\n┃✧╭─────────────────
-┃✧│ `;
+╭════〘 ${cmmd} 〙════⊷❍\n┃${star}╭─────────────────
+┃${star}│ `;
         let comad = cmnd.filter(({ type }) => type == cmmd);
         comad.forEach(({ cmd }, num) => {
-          menu += `\n┃✧│ ${cmd.trim()}`;
+          menu += `\n┃${star}│ ${cmd.trim()}`;
         });
-        menu += `\n┃✧╰─────────────────
+        menu += `\n┃${star}╰─────────────────
 ╰══════════════════⊷❍`;
       });
 
