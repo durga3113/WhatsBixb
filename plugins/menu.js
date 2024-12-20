@@ -1,6 +1,6 @@
 const plugins = require("../lib/events");
 const { Bixby, isPrivate, clockString, pm2Uptime} = require("../lib");
-const { fancy10, typewriter, tiny } = require("../lib/functions")
+const { FancyRandom } = require("../lib/functions")
 const { BOT_NAME, OWNER_NAME, WORK_TYPE, BOT_IMG} = require("../config");
 
 
@@ -92,7 +92,8 @@ Description: ${i.desc}\`\`\``;
       menu += `\n`;
       //menu += `_🔖Send ${prefix}menu <command name> to get detailed information of specific command._\n*📍Eg:* _${prefix}menu plugin_`;
       let fin = await menu.toUpperCase()
-      return await message.client.sendMessage(message.jid, {text: typewriter(fin)});
+      const randomFont = FancyRandom();
+      return await message.client.sendMessage(message.jid, {text: randomFont(fin)});
 
     }
   } catch (error) {
@@ -135,8 +136,9 @@ Bixby(
       menu += `│ \`\`\`${cmd}\`\`\`\n`;
     });
     menu += `╰────────────────`
-    let fin = await menu.toUpperCase()
-    return await message.client.sendMessage(message.jid, {text: typewriter(fin)});
+    let fin = await menu.toUpperCase();
+    const randomFont = FancyRandom(); // Get a random font function
+    return await message.client.sendMessage(message.jid, { text: randomFont(fin) });
   } catch (error) {
     console.error("[Error]:", error);
   }
