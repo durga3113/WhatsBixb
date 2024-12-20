@@ -3,50 +3,6 @@ const { Bixby, isPrivate, clockString, pm2Uptime} = require("../lib");
 const { fancy10, typewriter, tiny } = require("../lib/functions")
 const { BOT_NAME, OWNER_NAME, WORK_TYPE, BOT_IMG} = require("../config");
 
-const { hostname, uptime, totalmem, freemem } = require("os");
-
-var tempo = (freemem / (1024 * 1024))
-let allFreeMem;
-if(tempo.toString().length <= 3){ allFreeMem = tempo }
-if(tempo.toString().length > 3){ allFreeMem = (freemem / (1024 * 1024 * 1024)) }
-var avbMem = (totalmem / (1024 * 1024 * 1024))
-function formatTime(seconds) {
-  if (isNaN(seconds) || seconds < 0) {
-    return "Invalid input";
-  }
-
-  const months = Math.floor(seconds / (30 * 24 * 60 * 60));
-  seconds -= months * 30 * 24 * 60 * 60;
-
-  const days = Math.floor(seconds / (24 * 60 * 60));
-  seconds -= days * 24 * 60 * 60;
-
-  const hours = Math.floor(seconds / (60 * 60));
-  seconds -= hours * 60 * 60;
-
-  const minutes = Math.floor(seconds / 60);
-  seconds -= minutes * 60;
-
-  const timeArray = [];
-
-  if (months > 0) {
-    timeArray.push(months + (months === 1 ? " month" : " months"));
-  }
-  if (days > 0) {
-    timeArray.push(days + (days === 1 ? " day" : " days"));
-  }
-  if (hours > 0) {
-    timeArray.push(hours + (hours === 1 ? " hour" : " hours"));
-  }
-  if (minutes > 0) {
-    timeArray.push(minutes + (minutes === 1 ? " minute" : " minutes"));
-  }
-  if (seconds > 0) {
-    timeArray.push(seconds + (seconds === 1 ? " second" : " seconds"));
-  }
-
-  return timeArray.join(", ");
-}
 
 Bixby(
   {
